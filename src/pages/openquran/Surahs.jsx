@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router"
+import { useLoaderData, Link } from "react-router"
 import ReactAudioPlayer from 'react-audio-player';
 
 export async function loader() {
@@ -20,22 +20,21 @@ export default function Surahs() {
       {surahs.data.map((sure) => (
         <>
           <div className='chapters-details' key={sure.id}>
-            <p>{sure.id}</p>
-            <p>{sure.name}</p>
-            <p>{sure.name_en}</p>
-            <p>{sure.name_original}</p>
-            <p>{sure.slug}</p>
-            <p>{sure.verse_count}</p>
-
+            <div className='chapters'>
+              {/* <Link to={`editions/${sure.id.toString()}`} key={sure.id}> */}
+                <p>{`${sure.id}. Sure ${sure.name} ${sure.name_original} Ayet sayısı ${sure.verse_count} Sayfa ${sure.page_number + 1}`}</p>
+              {/* </Link> */}
+            </div>
+            
             <div className="flex-container">
               <div className="item">TR</div>
-              <div className="item">
+              <div>
                 <ReactAudioPlayer src={sure.audio.mp3} controls preload="none" />
               </div>
             </div>
             <div className="flex-container">
               <div className="item">EN</div>
-              <div className="item">
+              <div>
                 <ReactAudioPlayer src={sure.audio.mp3_en} controls preload="none" />
               </div>
             </div>
