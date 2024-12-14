@@ -154,7 +154,7 @@ form label span {
 }
 .flex-container {
   margin-top: 10px;
-  width: 350px;
+  width: 250px;
   /* We first create a flex layout context */
   display: flex;
 
