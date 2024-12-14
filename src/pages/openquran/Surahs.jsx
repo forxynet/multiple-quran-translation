@@ -39,6 +39,7 @@ export default function Surahs() {
                 <ReactAudioPlayer src={sure.audio.mp3_en} controls preload="none" />
               </div>
             </div>
+
           </div>
         </>
       ))}
