@@ -154,7 +154,8 @@ form label span {
 }
 .flex-container {
   margin-top: 10px;
-  width: 250px;
+  margin-right: 10px;
+  width: 50%;
   /* We first create a flex layout context */
   display: flex;
 
@@ -170,6 +171,7 @@ form label span {
   justify-content: space-around;
 }
 .item {
+  min-width: 30px;
  flex-shrink: 3; /* default 1 */
   align-self: center;  
 }
