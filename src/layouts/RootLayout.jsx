@@ -7,9 +7,9 @@ export default function RootLayout() {
       <header>
         <nav className='menu'>
           <h1>Quran Verse by Verse. Many Languages</h1>
-          <NavLink to="/">Home</NavLink>
+          {/* <NavLink to="/">Home</NavLink>
           <NavLink to="about">About</NavLink>
-          <NavLink to="help">Help</NavLink>         
+          <NavLink to="help">Help</NavLink>          */}
           <NavLink to="surahs">Surahs</NavLink>         
           <NavLink to="chapters">Chapters</NavLink>
         </nav>
