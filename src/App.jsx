@@ -21,8 +21,8 @@ import Surahs, {loader} from './pages/openquran/Surahs';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
-      <Route index element={<Home />} />
-      <Route path="about" element={<About />} />
+      {/* <Route index element={<Home />} />
+      <Route path="about" element={<About />} /> */}
       <Route path="Surahs" element={<Surahs />} loader={loader} />
       <Route path="chapters" element={<ChaptersLayout />} errorElement={ChaptersError}>
         <Route
