@@ -2,7 +2,7 @@
 
 :root {
   --primary: #75ff25;
-  --secondary: #efefef;
+  --secondary: #ffffff;
 }
 body {
   margin: 0;
@@ -123,7 +123,7 @@ form label span {
 
 /* chapters details */
 .chapters-details {
-  background: rgba(168, 167, 167, 0.2);
+  background:rgb(92, 245, 99);  
   padding:  20px;
   border-radius:  4px;
   -webkit-border-radius:  4px;
@@ -133,7 +133,7 @@ form label span {
   margin: 20px 0;
 }
 .chapters-details-1 {
-  background: rgba(202, 202, 202, 0.2);  
+  background: rgb(233, 233, 233);  
   border-radius:  4px;
   padding-top: 10px;
   -webkit-border-radius:  4px;
