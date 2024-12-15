@@ -27,20 +27,40 @@ export default function Surahs() {
             <p>{sure.verse_count}</p>
 
 
-            <div className='chapters-details' key={sure.id}>
-              <div className="flex-container">
-                <div className="item">TR</div>
-                <div className="item">
+            <div className='surahs-details' key={sure.id}>
+              <div id="container-player">
+                <div id="nameDiv">
+                  TR
+                </div>
+                <div id="playerDiv">
+                  <ReactAudioPlayer src={sure.audio.mp3} controls preload="none" />
+                </div>
+              </div>
+
+              <div id="container-player">
+                <div id="nameDiv">
+                  EN
+                </div>
+                <div id="playerDiv">
+                   <ReactAudioPlayer src={sure.audio.mp3_en} controls preload="none" />
+                </div>
+              </div>
+
+
+
+              {/* <div className="flex-container">
+                <div className="itemLanTr"></div>
+                <div className="itemPlayer">
                   <ReactAudioPlayer src={sure.audio.mp3} controls preload="none" />
                 </div>
               </div>
               <div className="flex-container">
-                <div className="item">EN</div>
-                <div className="item">
+                <div className="itemLanEn"></div>
+                <div className="itemPlayer">
                   <ReactAudioPlayer src={sure.audio.mp3_en} controls preload="none" />
                 </div>
-              </div>
-            </div>
+              </div>*/}
+            </div> 
           </div>
         </>
       ))}

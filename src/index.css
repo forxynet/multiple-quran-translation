@@ -4,19 +4,23 @@
   --primary: #75ff25;
   --secondary: #ffffff;
 }
+
 body {
   margin: 0;
   padding: 20px;
   font-family: "Poppins";
   background: var(--secondary);
 }
+
 * {
   color: #050505;
   margin: 0;
 }
+
 p {
   margin: 20px 0;
 }
+
 button {
   border: 0;
   padding: 8px;
@@ -34,15 +38,18 @@ header nav {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 header nav h1 {
   margin-right: auto;
   border-bottom: 3px solid var(--primary);
 }
-header nav a{
+
+header nav a {
   text-decoration: none;
   padding: 6px;
   border-radius: 4px;
 }
+
 header nav a.active {
   background: var(--primary);
 }
@@ -60,22 +67,25 @@ main {
   gap: 30px;
   margin: 30px 0;
 }
-.help-layout nav a{
+
+.help-layout nav a {
   padding: 10px;
   border: 2px solid rgb(0, 0, 0);
   border-radius: 4px;
   text-decoration: none;
 }
-.help-layout nav a:hover{
+
+.help-layout nav a:hover {
   border-color: var(--primary);
 }
+
 .help-layout nav a.active {
   background: var(--primary);
 }
 
 /* faq */
 .faq .question {
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   padding: 5px 20px;
   border-radius: 4px;
   margin: 20px 0;
@@ -85,11 +95,16 @@ main {
 form {
   margin-top: 30px;
 }
-form input, form label span, form textarea {
+
+form input,
+form label span,
+form textarea {
   display: block;
   border-color: darkgray;
 }
-form input, form textarea {
+
+form input,
+form textarea {
   margin-bottom: 30px;
   padding: 8px;
   border-radius: 4px;
@@ -97,57 +112,63 @@ form input, form textarea {
   width: 300px;
   color: rgb(0, 0, 0);
 }
+
 form label span {
   margin-bottom: 10px;
 }
 
 /* chapters list */
-.chapters > a {
+.chapters>a {
   display: block;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   padding: 20px;
   border-radius: 4px;
   margin: 20px 0;
   text-decoration: none;
 }
-.chapters > a:hover p {
+
+.chapters>a:hover p {
   color: var(--primary);
 }
+
 .chapters p {
   margin: 0;
 }
-.chapters > a p:last-child {
- font-size: 0.8em;
- color: #f92727;
+
+.chapters>a p:last-child {
+  font-size: 0.8em;
+  color: #f92727;
 }
 
 /* chapters details */
 .chapters-details {
-  background:rgb(124, 255, 104); 
-  padding:  20px;
-  border-radius:  4px;
-  -webkit-border-radius:  4px;
-  -moz-border-radius:  4px;
-  -ms-border-radius:  4px;
-  -o-border-radius:  4px;
-  margin: 20px 0;
-
-   box-shadow: 3px 3px 0 3px #e4e4e4;
-    border: 0px solid;
-}
-.chapters-details-1 {
-  background: rgba(0, 0, 0, 0.05);  
-  border-radius:  4px;
-  padding-top: 10px;
-  -webkit-border-radius:  4px;
-  -moz-border-radius:  4px;
-  -ms-border-radius:  4px;
-  -o-border-radius:  4px;
+  background: rgb(124, 255, 104);
+  padding: 20px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
   margin: 20px 0;
 
   box-shadow: 3px 3px 0 3px #e4e4e4;
-    border: 0px solid;
+  border: 0px solid;
 }
+
+.chapters-details-1 {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  padding-top: 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  margin: 20px 0;
+
+  box-shadow: 3px 3px 0 3px #e4e4e4;
+  border: 0px solid;
+}
+
 .chapters-details-1 p {
   padding-left: 15px;
 }
@@ -157,40 +178,55 @@ form label span {
   max-width: 1200px;
   margin: 20px auto;
 }
-.breadcrumbs > *{
+
+.breadcrumbs>* {
   display: inline-block;
   margin-right: 10px;
 }
+
 .breadcrumbs .crumb:after {
   content: '>';
   margin-left: 10px;
 }
+
 .breadcrumbs .crumb:last-child:after {
   display: none;
 }
+
 .breadcrumbs .crumb a {
   color: #000000;
 }
-.flex-container {
-  margin-top: 10px;
-  margin-right: 10px;
-  width: 50%;
-  /* We first create a flex layout context */
-  display: flex;
 
-  /* Then we define the flow direction 
-     and if we allow the items to wrap 
-   * Remember this is the same as:
-   * flex-direction: row;
-   * flex-wrap: wrap;
-   */
-  flex-flow: row wrap;
+.surahs-details {
+  height: 130px;
+  background: rgb(124, 255, 104);
+  padding: 20px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  margin: 20px 0;
 
-  /* Then we define how is distributed the remaining space */
-  justify-content: space-around;
+  box-shadow: 3px 3px 0 3px #e4e4e4;
+  border: 0px solid;
 }
-.item {
-  min-width: 30px;
- flex-shrink: 3; /* default 1 */
-  align-self: center;  
+
+#container-player {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+#nameDiv {
+  margin-top: 10px;
+  display: inline;
+  width: 10%;
+  float: left;
+}
+
+#playerDiv {
+  display: inline;
+  width: 90%;
+  float: right;
 }
