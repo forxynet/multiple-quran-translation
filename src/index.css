@@ -198,7 +198,7 @@ form label span {
 }
 
 .surahs-details {
-  height: 130px;
+  height: 110px;
   background: rgb(124, 255, 104);
   padding: 20px;
   border-radius: 4px;
@@ -212,15 +212,14 @@ form label span {
   border: 0px solid;
 }
 
+
 #container-player {
   display: flex;
   flex-wrap: wrap;
-  margin: 10px;
 }
 
 #nameDiv {
-  margin-top: 10px;
-  display: inline;
+  margin: auto;
   width: 10%;
   float: left;
 }
