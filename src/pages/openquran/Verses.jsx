@@ -15,7 +15,7 @@ export default function Verses() {
         }
         const data = await response.json();
         setVerses(data);
-        console.log(data);
+        //console.log(data);
       }
 
       getVerses();
@@ -37,7 +37,7 @@ export default function Verses() {
           </select>
         </div>
       </div>
-      
+
       <div className="container">
         <div>
           {verses && verses.data.verses.map((ayet) => (
@@ -45,10 +45,18 @@ export default function Verses() {
               <div className='chapters-details-1'>
                 <p>{`${ayet.id}. ayet`}</p>
                 <p>{`${ayet.page}. sayfa ${ayet.juz_number}. cüz`}</p>
+                <hr />
                 <div className='chapters-details'>
                   <p>{ayet.verse}</p>
-                  <p>{ayet.transcription}</p>
-
+                  <p>{ayet.transcription}</p>  
+                  <hr />
+                  <p>{ayet.translation.text}</p>
+                  <hr />
+                 
+                  {/* {ayet.translation.foodnotes && ayet.translation.map((notes) => {
+                    <p>{notes.text}</p>
+                  })} */}
+                  {console.log(ayet.translation)}
                 </div>
               </div>
             </>
