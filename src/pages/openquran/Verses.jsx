@@ -42,24 +42,30 @@ export default function Verses() {
         <div>
           {verses && verses.data.verses.map((ayet) => (
             <>
-              <div className='chapters-details-1'>
+              <div className='verses-details-1'>
                 <p>{`${ayet.id}. ayet`}</p>
                 <p>{`${ayet.page}. sayfa ${ayet.juz_number}. cüz`}</p>
 
-                <div className='chapters-details'>
+                <div className='verses-details'>
                   <p>{ayet.verse}</p>
                 </div>
-                <div className="chapters-details-1">
+                <div className="verses-details-1">
                   <p>{ayet.transcription}</p>
                 </div>
-                <div className='chapters-details-1'>
+                <div className='verses-details-1'>
                   <p>{ayet.translation.text}</p>
                 </div>
 
-                {/* {ayet.translation.foodnotes && ayet.translation.map((notes) => {
-                    <p>{notes.text}</p>
-                  })} */}
+                {
+                  ayet.translation.foodnotes &&
+                  //ayet.translation.foodnotes.length > 0 &&
+                  
+                  ayet.translation.foodnotes.map(notes => (
+                      <p key={notes.id}>{ notes.text}</p>
+                  ))
+                }
                 {console.log(ayet.translation)}
+
               </div>
             </>
           ))}

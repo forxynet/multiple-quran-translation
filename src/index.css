@@ -183,6 +183,39 @@ form label span {
   padding-left: 15px;
 }
 
+/* Verses*/
+.verses-details {
+  background: rgb(124, 255, 104);
+  padding: 20px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  margin: 20px 0;
+  font-size: x-large ;
+  box-shadow: 3px 3px 0 3px #e4e4e4;
+  border: 0px solid;
+}
+
+.verses-details-1 {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  padding: 10px 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  margin: 20px 0;
+
+  box-shadow: 3px 3px 0 3px #e4e4e4;
+  border: 0px solid;
+}
+
+.versess-details-1 p {
+  padding-left: 15px;
+}
+
 /* breadcrumbs */
 .breadcrumbs {
   max-width: 1200px;
