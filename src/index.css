@@ -61,6 +61,9 @@ header nav a.active {
   background: var(--primary);
 }
 
+hr {
+  color: #c6c6c6;
+}
 /* page content */
 main {
   max-width: 1200px;
