@@ -16,14 +16,16 @@ import NotFound from './pages/NotFound';
 import Chapters, { chaptersLoader } from './pages/chapters/Chapters'
 import Editions, { editionsDetailsLoader } from './pages/chapters/Editions'
 import ChaptersError from './pages/chapters/ChaptersError'
-import Surahs, {loader} from './pages/openquran/Surahs';
+import SurahAudio, {loader} from './pages/openquran/SurahAudio';
+import Verses, {loaderVerses} from './pages/openquran/Verses';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       {/* <Route index element={<Home />} />
       <Route path="about" element={<About />} /> */}
-      <Route path="Surahs" element={<Surahs />} loader={loader} />
+      <Route path="Verses" element={<Verses />} loader={loader} />
+      <Route path="Surahs" element={<SurahAudio />} loader={loaderVerses} />
       <Route path="chapters" element={<ChaptersLayout />} errorElement={ChaptersError}>
         <Route
           index          

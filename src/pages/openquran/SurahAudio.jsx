@@ -1,9 +1,8 @@
 //import { useRef, useState, useEffect } from 'react';
 import { useLoaderData } from "react-router"
-//import ReactAudioPlayer from 'react-audio-player';
 import AudioPlayer from './AudioPlayer';
 
-export default function Surahs() {
+export default function SurahAudio() {
   const surahs = useLoaderData();
   
   return (
@@ -27,7 +26,6 @@ export default function Surahs() {
               <div id="container-player">                
                 <div id="playerDiv">
                     <AudioPlayer lang="EN" url={sure.audio.mp3_en} name={sure.name_en} /> 
-                     {/* <ReactAudioPlayer url={sure.audio.mp3_en}  /> */}
                 </div>
               </div>
             </div>
