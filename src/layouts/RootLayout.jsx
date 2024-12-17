@@ -6,7 +6,7 @@ export default function RootLayout() {
     <div className="root-layout">
       <header>
         <nav className='menu'>
-          <h1>Quran Verse by Verse. Many Languages</h1>
+          <h1>Quran Translation</h1>
           {/* <NavLink to="/">Home</NavLink>
           <NavLink to="about">About</NavLink>
           <NavLink to="help">Help</NavLink>          */}

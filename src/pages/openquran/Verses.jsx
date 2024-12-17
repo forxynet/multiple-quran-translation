@@ -56,7 +56,7 @@ export default function Verses() {
                 </div>
                 <div className="verses-details-1">
                   <p>{ayet.transcription}</p>
-                </div>
+                </div>               
                 <div className='verses-details-1'>
                   <p>{ayet.translation.text}</p>
                 </div>
