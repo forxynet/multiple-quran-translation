@@ -53,29 +53,27 @@ export default function Verses() {
                 </div>
 
                 <div className='main'>
-                  <p className="verses-details">{ayet.verse}</p>
-                  <p className="verses-details-1">{ayet.transcription}</p>
-                  <p className="verses-details-1">{ayet.translation.text}</p>
+                  <p className="verses-details">{`(${ayet.verse_number}) ${ayet.verse}`}</p>
+                  <p className="verses-details-1">{`(${ayet.verse_number}) ${ayet.transcription}`}</p>
+                  <p className="verses-details-1">{`(${ayet.verse_number}) ${ayet.translation.text}`}</p>
                 </div>
                 {/* <div className="aside aside-2">{`${selectedSureId}. Sûre ${selectedSureVerseCount}`}</div>
                 <div className="aside aside-1">{`${ayet.verse_number}. Ayet`}</div> */}
                 <div className="footer">
                   <div className="info-main ">
                     <div className="info-container">                     
-                      <p className="info-item">Sure No</p>
-                      <p className="info-item">Sure Ayet No</p>
+                      <p className="info-item">Sure No</p>                   
                       <p className="info-item">Ayet Sayısı</p>
-                      <p className="info-item">Sayfa No</p>
-                      <p className="info-item">Cüz No</p>
                       <p className="info-item">Ayet No</p>
+                      <p className="info-item">Sayfa</p>
+                      <p className="info-item">Cüz</p>
                     </div>
                     <div className="info-container">                     
-                      <p className="info-item">{selectedSureId}</p>
-                      <p className="info-item">{ayet.verse_number}</p>
+                      <p className="info-item">{selectedSureId}</p>                     
                       <p className="info-item">{selectedSureVerseCount}</p>
+                      <p className="info-item">{ayet.id}</p>
                       <p className="info-item">{ayet.page}</p>
                       <p className="info-item">{ayet.juz_number}</p>
-                      <p className="info-item">{ayet.id}</p>
                     </div>
                   </div>
                 </div>

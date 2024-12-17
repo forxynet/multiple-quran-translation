@@ -389,12 +389,12 @@ select::-ms-expand {
 }
 .info-container {
   display: flex;
-  gap: 15px;
+  gap: 5px;
 }
 .info-item {
-  max-width: 50px;
+  max-width: 60px;
   flex: 1 0 30%;
-  border: 1px #c6c6c6;
+  border-style: 1px #c6c6c6;
 }
 
 @media all and (min-width: 600px) {
