@@ -67,8 +67,9 @@ export default function Verses() {
 
                   </p>
                 </div>
-
+                
                 <div className="footer">
+                  <hr />
                   <div className="info-main ">
                     <div className="info-container">
                       <p className="info-item">Sure No</p>

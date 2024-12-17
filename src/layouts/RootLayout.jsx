@@ -12,7 +12,7 @@ export default function RootLayout() {
           <NavLink to="help">Help</NavLink>          */}
           <NavLink to="verses">Verses</NavLink>         
           <NavLink to="surahs">Surahs</NavLink>         
-          <NavLink to="chapters">Chapters</NavLink>
+          {/* <NavLink to="chapters">Chapters</NavLink> */}
         </nav>
       </header>
       <Breadcrumps />

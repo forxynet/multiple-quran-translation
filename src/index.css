@@ -395,6 +395,7 @@ select::-ms-expand {
   justify-content: center;
 }
 .info-main {
+  margin-top: 10px;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: start;
