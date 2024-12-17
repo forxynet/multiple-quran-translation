@@ -17,7 +17,7 @@ export default function Verses() {
         const data = await response.json();
         setVerses(data);
         setSelectedSureName(data.data.name);
-        console.log(selectedSureName);
+        console.log(data.data);
       }
 
       getVerses();
@@ -46,7 +46,7 @@ export default function Verses() {
             <>
               <div className='verses-details-1'>
                 <div className='surah-name'>
-                   <p>{` ${selectedSureName} sûresi`}</p>
+                   <p>{`${selectedSureId}. sûre ${selectedSureName}`}</p>
                 </div>
                 <p>{`${ayet.id}. ayet`}</p>
                 <p>{`${ayet.page}. sayfa ${ayet.juz_number}. cüz`}</p>
