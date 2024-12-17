@@ -23,14 +23,13 @@ export default function SearchTable() {
     console.log(searchTerm);
     
     const newData = data.data.verses.filter(item => (
-      item.verse.includes(searchTerm) ||
-      item.transcription.includes(searchTerm) ||
+      item.verse.includes(searchTerm) ||     
       item.translation.text.includes(searchTerm))  
     )
     
 
     setFilteredData(newData);
-    console.log(newData);
+    //console.log(newData);
   }
 
 
@@ -56,10 +55,7 @@ export default function SearchTable() {
             </td>
             <td>
               Verse
-            </td>
-            <td>
-              Transcription
-            </td>
+            </td>           
             <td>
               Text
             </td>
@@ -71,8 +67,7 @@ export default function SearchTable() {
               <tr key={item.id}>
                 <td>{item.surah_id}</td>
                 <td>{item.verse_number}</td>
-                <td>{item.verse}</td>
-                <td>{item.transcription}</td>
+                <td>{item.verse}</td>               
                 <td>{item.translation.text}</td>
               </tr>
             ))
