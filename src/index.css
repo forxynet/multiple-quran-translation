@@ -385,13 +385,14 @@ select::-ms-expand {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: start;
+  font-size: x-small;
 }
 .info-container {
   display: flex;
   gap: 15px;
 }
 .info-item {
-  max-width: 110px;
+  max-width: 50px;
   flex: 1 0 30%;
   border: 1px #c6c6c6;
 }
