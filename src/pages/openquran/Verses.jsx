@@ -47,7 +47,6 @@ export default function Verses() {
           {verses && verses.data.verses.map((ayet) => (
             <>
               <div className='wrapper'>
-
                 <div className='header'>
                   <p>{selectedSureName} Sûresi</p>
                 </div>
@@ -56,18 +55,21 @@ export default function Verses() {
                   <p className="verses-details">{`(${ayet.verse_number}) ${ayet.verse}`}</p>
                   <p className="verses-details-1">{`(${ayet.verse_number}) ${ayet.transcription}`}</p>
                   <p className="verses-details-1">{`(${ayet.verse_number}) ${ayet.translation.text}`}</p>
-                  <hr />
-                  <p className="verses-footnotes">
-                    {
-                      ayet.translation.footnotes !== null &&
-                      ayet.translation.footnotes.map(footnotes => (
-                        <p key={footnotes.id}>{`[${footnotes.number}] ${footnotes.text}`}</p>
-                      ))
-                    }
 
-                  </p>
+                  <div style={{ display: (ayet.translation.footnotes !== null ? 'block' : 'none') }}>
+                    <hr />
+                    <div className="verses-footnotes">
+                      {
+                        ayet.translation.footnotes !== null &&
+                        ayet.translation.footnotes.map(footnotes => (
+                          <p key={footnotes.id}>{`[${footnotes.number}] ${footnotes.text}`}</p>
+                        ))
+                      }
+                    </div>
+                  </div>
+
                 </div>
-                
+
                 <div className="footer">
                   <hr />
                   <div className="info-main ">
@@ -88,21 +90,12 @@ export default function Verses() {
                   </div>
                 </div>
 
-                {/* {
-                  ayet.translation.footnotes !== null &&
-                  ayet.translation.footnotes.map(footnotes => (
-                    <p key={footnotes.id}>{`[${footnotes.number}] ${footnotes.text}`}</p>
-                  ))
-                }
-                {ayet.translation.footnotes !== null && console.log(ayet.translation)} */}
-
-
-              </div>
+              </div >
             </>
           ))}
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 
