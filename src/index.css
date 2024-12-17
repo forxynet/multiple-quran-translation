@@ -160,7 +160,7 @@ form label span {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   margin: 20px 0;
-
+  font-weight: bold;
   box-shadow: 3px 3px 0 3px #e4e4e4;
   border: 0px solid;
 }
@@ -334,7 +334,88 @@ select::-ms-expand {
   justify-content: center;
   align-items: absolute;
 }
+
 */ .down_note {
   display: flex;
   justify-content: center;
+}
+
+/* verses **/
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+}
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.header {
+  margin-top: 10px;
+  background: rgb(229, 229, 229);
+}
+
+.footer {
+  background: rgb(229, 229, 229);
+}
+
+.main {
+  text-align: left;
+  background: rgb(229, 229, 229);
+}
+
+.aside-1 {
+  max-width: 50px;
+  background: rgb(229, 229, 229);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aside-2 {
+  max-width: 50px;
+  background: rgb(229, 229, 229);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.info-main {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+.info-container {
+  display: flex;
+  gap: 15px;
+}
+.info-item {
+  max-width: 110px;
+  flex: 1 0 30%;
+  border: 1px #c6c6c6;
+}
+
+@media all and (min-width: 600px) {
+  .aside {
+    flex: 1 0 0;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .main {
+    flex: 3 0px;
+  }
+  .aside-1 {
+    order: 1;
+  }
+  .main {
+    order: 2;
+  }
+  .aside-2 {
+    order: 3;
+  }
+  .footer {
+    order: 4;
+  }
 }
