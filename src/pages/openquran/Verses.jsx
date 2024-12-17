@@ -19,7 +19,7 @@ export default function Verses() {
         setVerses(data);
         setSelectedSureName(data.data.name);
         setSelectedSureVerseCount(data.data.verse_count);
-        console.log(data.data);
+        //console.log(data.data.foodnotes);
       }
 
       getVerses();
@@ -56,20 +56,29 @@ export default function Verses() {
                   <p className="verses-details">{`(${ayet.verse_number}) ${ayet.verse}`}</p>
                   <p className="verses-details-1">{`(${ayet.verse_number}) ${ayet.transcription}`}</p>
                   <p className="verses-details-1">{`(${ayet.verse_number}) ${ayet.translation.text}`}</p>
+                  <hr />
+                  <p className="verses-footnotes">
+                    {
+                      ayet.translation.footnotes !== null &&
+                      ayet.translation.footnotes.map(footnotes => (
+                        <p key={footnotes.id}>{`[${footnotes.number}] ${footnotes.text}`}</p>
+                      ))
+                    }
+
+                  </p>
                 </div>
-                {/* <div className="aside aside-2">{`${selectedSureId}. Sûre ${selectedSureVerseCount}`}</div>
-                <div className="aside aside-1">{`${ayet.verse_number}. Ayet`}</div> */}
+
                 <div className="footer">
                   <div className="info-main ">
-                    <div className="info-container">                     
-                      <p className="info-item">Sure No</p>                   
+                    <div className="info-container">
+                      <p className="info-item">Sure No</p>
                       <p className="info-item">Ayet Sayısı</p>
                       <p className="info-item">Ayet No</p>
                       <p className="info-item">Sayfa</p>
                       <p className="info-item">Cüz</p>
                     </div>
-                    <div className="info-container">                     
-                      <p className="info-item">{selectedSureId}</p>                     
+                    <div className="info-container">
+                      <p className="info-item">{selectedSureId}</p>
                       <p className="info-item">{selectedSureVerseCount}</p>
                       <p className="info-item">{ayet.id}</p>
                       <p className="info-item">{ayet.page}</p>
@@ -77,16 +86,14 @@ export default function Verses() {
                     </div>
                   </div>
                 </div>
-                {/* {`${ayet.page}. Sayfa ${ayet.juz_number}. Cüz ${ayet.id}. Ayet`}</div> */}
 
-
-                {
-                  ayet.translation.foodnotes &&
-                  ayet.translation.foodnotes.map(notes => (
-                    <p key={notes.id}>{notes.text}</p>
+                {/* {
+                  ayet.translation.footnotes !== null &&
+                  ayet.translation.footnotes.map(footnotes => (
+                    <p key={footnotes.id}>{`[${footnotes.number}] ${footnotes.text}`}</p>
                   ))
                 }
-                {/* {ayet.translation !== null && console.log(ayet.translation)} */}
+                {ayet.translation.footnotes !== null && console.log(ayet.translation)} */}
 
 
               </div>

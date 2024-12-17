@@ -222,6 +222,19 @@ form label span {
   box-shadow: 3px 3px 0 3px #e4e4e4;
   border: 0px solid;
 }
+.verses-footnotes {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 4px;
+  padding: 10px 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  margin: 20px 0;
+  font-size: x-small;
+  box-shadow: 3px 3px 0 3px #e4e4e4;
+  border: 0px solid;
+}
 
 .versess-details-1 p {
   padding-left: 15px;
