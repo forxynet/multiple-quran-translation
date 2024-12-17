@@ -3,31 +3,33 @@ import { useLoaderData } from "react-router"
 
 export default function Verses() {
   const surahs = useLoaderData();
-  const [selectedSure, setSelectedSure] = useState(null);
+  const [selectedSureId, setSelectedSureId] = useState(null);
+  const [selectedSureName, setSelectedSureName] = useState(null);
   const [verses, setVerses] = useState(null);
 
   useEffect(() => {
-    if (selectedSure > 0) {
+    if (selectedSureId > 0) {
       const getVerses = async () => {
-        const response = await fetch('https://api.acikkuran.com/surah/' + selectedSure);
+        const response = await fetch('https://api.acikkuran.com/surah/' + selectedSureId);
         if (!response.ok) {
           throw new Error(`HTTP error: Status ${response.status}`);
         }
         const data = await response.json();
         setVerses(data);
-        //console.log(data);
+        setSelectedSureName(data.data.name);
+        console.log(selectedSureName);
       }
 
       getVerses();
     }
 
-  }, [selectedSure]);
+  }, [selectedSureId]);
 
   return (
     <div className='chapters'>
       <div className="container">
         <div className="select">
-          <select value={selectedSure} onChange={e => setSelectedSure(e.target.value)}>
+          <select value={selectedSureId} onChange={e => setSelectedSureId(e.target.value)}>
             <option key="0">Bir sure seçin..</option>
             <>
               {surahs && surahs.data.map((sure) => (
@@ -43,6 +45,9 @@ export default function Verses() {
           {verses && verses.data.verses.map((ayet) => (
             <>
               <div className='verses-details-1'>
+                <div className='surah-name'>
+                   <p>{` ${selectedSureName} sûresi`}</p>
+                </div>
                 <p>{`${ayet.id}. ayet`}</p>
                 <p>{`${ayet.page}. sayfa ${ayet.juz_number}. cüz`}</p>
 
@@ -58,13 +63,11 @@ export default function Verses() {
 
                 {
                   ayet.translation.foodnotes &&
-                  //ayet.translation.foodnotes.length > 0 &&
-                  
                   ayet.translation.foodnotes.map(notes => (
                       <p key={notes.id}>{ notes.text}</p>
                   ))
                 }
-                {console.log(ayet.translation)}
+                {/* {ayet.translation !== null && console.log(ayet.translation)} */}
 
               </div>
             </>
