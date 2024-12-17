@@ -174,7 +174,6 @@ form label span {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   margin: 20px 0;
-
   box-shadow: 3px 3px 0 3px #e4e4e4;
   border: 0px solid;
 }
@@ -218,7 +217,7 @@ form label span {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   margin: 20px 0;
-
+  font-size: medium;
   box-shadow: 3px 3px 0 3px #e4e4e4;
   border: 0px solid;
 }
