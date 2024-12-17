@@ -52,7 +52,7 @@ export default function Verses() {
                 </div>
 
                 <div className='main'>
-                  <p className="verses-details">{`(${ayet.verse_number}) ${ayet.verse}`}</p>
+                  <p className="verses-details">{`${ayet.verse} (${ayet.verse_number})`}</p>
                   <p className="verses-details-1">{`(${ayet.verse_number}) ${ayet.transcription}`}</p>
                   <p className="verses-details-1">{`(${ayet.verse_number}) ${ayet.translation.text}`}</p>
 
