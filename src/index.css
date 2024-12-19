@@ -203,8 +203,7 @@ form label span {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   margin: 20px 0;
-  font-size: x-large;
-  box-shadow: 3px 3px 0 3px #e4e4e4;
+  font-size: x-large;  
   border: 0px solid;
 }
 .surah-name {
@@ -229,7 +228,6 @@ form label span {
   -o-border-radius: 4px;
   margin: 20px 0;
   font-size: medium;
-  box-shadow: 3px 3px 0 3px #e4e4e4;
   border: 0px solid;
 }
 .verses-footnotes {
@@ -241,8 +239,7 @@ form label span {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   margin: 20px 0;
-  font-size: small;
-  box-shadow: 3px 3px 0 3px #e4e4e4;
+  font-size: small; 
 }
 
 .versess-details-1 p {
