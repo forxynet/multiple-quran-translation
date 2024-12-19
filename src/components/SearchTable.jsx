@@ -1,83 +1,134 @@
 import { useEffect, useState } from 'react'
 
-export default function SearchTable() {
+const API_URL = `https://api.acikkuran.com/surah/`;
+
+export default function SearchTable(surahs) {
   const [searchTerm, setSearchTerm] = useState();
-  const [data, setData] = useState();
-  const [filteredData, setFilteredData] = useState();
+  const [loading, setLoading] = useState(true);
+  const [verses, setVerses] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+
+
+  const myArray = [];
 
   useEffect(() => {
-  const getVerses = async () => {
-    const response = await fetch('https://api.acikkuran.com/surah/' + 2);
-        if (!response.ok) {
-          throw new Error(`HTTP error: Status ${response.status}`);
+    async function iteraateObject(obj) {
+      for (var key in obj) {
+        if (typeof obj[key] === "object" && obj[key] !== null) {
+          iteraateObject(obj[key]);
         }
-        const data = await response.json();
-    console.log(data);
-    setData(data);
-  }
-  getVerses();
+        else {
+          if (key === "id") {
+            let id = obj[key];
+            fetch(API_URL + id)
+              .then(res => { return res.json() })
+              .then(surah => {
+                if (myArray.length <= 114) {
+                  myArray.push(surah.data.verses)
+                }
+              });
+          }
+        }
+      }
+    }
+
+    setLoading(true);
+    iteraateObject(surahs);
+    setLoading(false);
+
+    setVerses(myArray)
+
+    // if (myArray) {
+    //   console.log('kuran data')
+    //   console.log(myArray);
+    //   localStorage.setItem("kurad-data", JSON.stringify(myArray))
+    // }
+    
   }, []);
 
-  function handleFilteredData() {   
-    
-    console.log(searchTerm);
-    
-    const newData = data.data.verses.filter(item => (
-      item.verse.includes(searchTerm) ||     
-      item.translation.text.includes(searchTerm))  
-    )
-    
 
-    setFilteredData(newData);
-    //console.log(newData);
+  const filteredArray = [];
+  const filteredResultData = [];
+  async function handleFilteredData() {
+    verses.map(data => (
+      filteredArray.push((data.filter(item => (
+        item.verse.includes(searchTerm) ||
+        item.translation.text.includes(searchTerm))
+      )))
+    ))
+
+    const result = await filteredArray.filter(o => Object.values(o).some(v => v !== null));
+    filteredResultData.push(result);
+    
+    console.log("result:"+result.length);
+    console.log("filteredResultData:"+filteredResultData.length);
+
+
+    setFilteredData(...filteredResultData);
+
+    console.log("filteredData"+filteredData.length);
+
+    /** resul console */
+    // filteredResultData.map(item => (
+    //   item.map(item => (
+    //     item.map(item => (
+    //       console.log(item)
+    //     ))
+    //   ))
+    // ))
+
+    /** */
   }
-
 
   return (
     <div>
       <input
         type='text'
-        placeholder='seach by verse, transcription or text'
+        placeholder='seach by arabic or text'
         value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        onChange={(e) => { setSearchTerm(e.target.value); setFilteredData(null); }}
         className='mb-4 p-2 border border-gray-300 rounded'
       />&nbsp;
       <button onClick={handleFilteredData}>Search</button>
-      <p>geliştiriliyor şimdi sadece bakara süresinde</p>
-      <table border="1">
-        <thead>
-          <tr>
-            <td>
-              Sure
-            </td>
-            <td>
-              Ayet
-            </td>
-            <td>
-              Verse
-            </td>           
-            <td>
-              Text
-            </td>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredData ? (
-            filteredData.map(item => (
-              <tr key={item.id}>
-                <td>{item.surah_id}</td>
-                <td>{item.verse_number}</td>
-                <td>{item.verse}</td>               
-                <td>{item.translation.text}</td>
-              </tr>
-            ))
-          ) : (
+      {loading && <div>Loading</div>}
+      {!loading && (
+        <table border="1">
+          <thead>
             <tr>
-              <td colSpan="5">No results found</td>
+              <td>
+                Sure
+              </td>
+              <td>
+                Ayet
+              </td>
+              <td>
+                Verse
+              </td>
+              <td>
+                Text
+              </td>
             </tr>
-          )}
-        </tbody>
-      </table> 
+          </thead>
+          <tbody>
+            {filteredData !=null && filteredData ? (
+              filteredData.map(item => (
+                item.map(item => (
+                    <tr key={item.id}>
+                      <td>{item.surah_id}</td>
+                      <td>{item.verse_number}</td>
+                      <td>{item.verse}</td>
+                      <td>{item.translation.text}</td>
+                    </tr>
+                 ))
+              ))
+            ) : (
+              <tr>
+                <td colSpan="5">No results found</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      )}
     </div>
   )
 }
