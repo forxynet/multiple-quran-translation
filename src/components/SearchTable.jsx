@@ -102,7 +102,7 @@ export default function SearchTable(surahs) {
         <button onClick={handleFilteredData}>Search</button>
       </p>
       <p>
-        Bulunan sayı: {count}
+        results: {count}
       </p>
       <div className="container">
         <div>
