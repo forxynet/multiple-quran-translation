@@ -8,7 +8,22 @@ export default function SearchTable(surahs) {
   const [verses, setVerses] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [count, setCount] = useState(null);
+  const [surahId, setSurahId] = useState(null);
+  const [surahName, setSurahName] = useState(null);
+
   const myArray = [];
+
+  useEffect(() => {
+    const getSurahName = async () => {
+      surahName.surah.map((sure) => {
+        if (sure.id === surahId) {
+          setSurahName(sure.name)
+          return;
+        }
+      })
+    }
+    getSurahName();
+  }, [surahId]);
 
   useEffect(() => {
     async function iteraateObject(obj) {
@@ -34,15 +49,9 @@ export default function SearchTable(surahs) {
 
     setLoading(true);
     iteraateObject(surahs);
+    setVerses(myArray);
     setLoading(false);
 
-    setVerses(myArray);
-
-    // if (myArray) {
-    //   console.log('kuran data')
-    //   console.log(myArray);
-    //   localStorage.setItem("kurad-data", JSON.stringify(myArray))
-    // }
   }, []);
 
   const filteredArray = [];
@@ -65,23 +74,7 @@ export default function SearchTable(surahs) {
     filteredResultData.push(result);
 
     setCount(result.length);
-    console.log("result:" + result);
-    //console.log("filteredResultData:" + filteredResultData.length);
-
     setFilteredData(...filteredResultData);
-
-    console.log(filteredData);
-
-    /** resul console */
-    // filteredResultData.map(item => (
-    //   item.map(item => (
-    //     item.map(item => (
-    //       console.log(item)
-    //     ))
-    //   ))
-    // ))
-
-    /** */
   }
 
   return (
@@ -114,49 +107,50 @@ export default function SearchTable(surahs) {
             filteredData.map((data) =>
               data.map((item) => (
                 <>
-                  <div className="main" key={item.id}>
-                    <p className="verses-details">{`${item.verse} (${item.surah_id}:${item.verse_number})`}</p>
-                    <p className="verses-details-1">{`(${item.surah_id}:${item.verse_number}) ${item.transcription}`}</p>
-                    <p className="verses-details-1">{`(${item.surah_id}:${item.verse_number}) ${item.translation.text}`}</p>
-                    <div
-                      style={{
-                        display:
-                          item.translation.footnotes !== null ? "block" : "none",
-                      }}
-                    >
-                      <hr />
-                      <div className="verses-footnotes">
-                        {
-                          item.translation.footnotes !== null &&
-                          item.translation.footnotes.map(footnotes => (
-                            <p key={footnotes.id}>{`[${footnotes.number}] ${footnotes.text}`}</p>
-                          ))
-                        }
-                      </div>
-                    </div>
+                  <div key={item.id} className="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                    <h5 className="mb-2 text-3xl font-bold text-gray-900 dark:text-white">{`${item.verse} (${item.surah_id}:${item.verse_number})`}</h5>
+                    <p className="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">{`(${item.surah_id}:${item.verse_number}) ${item.transcription}`}</p>
+                    <p className="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">{`(${item.surah_id}:${item.verse_number}) ${item.translation.text}`}</p>
 
-                    <div className="footer">
-                      <hr />
-                      <div className="info-main ">
-                        <div className="info-container">
-                          <p className="info-item">Sure No</p>
-                          <p className="info-item">Sayfa</p>
-                          <p className="info-item">Cüz</p>
+                    <div className="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
+                      <div className="text-left rtl:text-right">
+                        <div className="mb-1 text-xs">
+                          <div style={{ display: item.translation.footnotes !== null ? "block" : "none" }}>
+                            <div className="verses-footnotes">
+                              {
+                                item.translation.footnotes !== null &&
+                                item.translation.footnotes.map(footnotes => (
+                                  <p key={footnotes.id}>{`[${footnotes.number}] ${footnotes.text}`}</p>
+                                ))
+                              }
+                            </div>
+                          </div>
                         </div>
-                        <div className="info-container">
-                          <p className="info-item">{item.surah_id}</p>
-                          <p className="info-item">{item.page}</p>
-                          <p className="info-item">{item.juz_number}</p>
+                        <div className="-mt-1 font-sans text-sm font-semibold"></div>
+                      </div>
+
+                      <div className="footer">
+                        <div className="info-main ">
+                          <div className="info-container">
+                            <p className="info-item">Sure No</p>
+                            <p className="info-item">Sayfa</p>
+                            <p className="info-item">Cüz</p>
+                          </div>
+                          <div className="info-container">
+                            <p className="info-item">{item.surah_id}</p>
+                            <p className="info-item">{item.page}</p>
+                            <p className="info-item">{item.juz_number}</p>
+                          </div>
                         </div>
                       </div>
+
                     </div>
                   </div>
-
                 </>
               ))
             )}
         </div>
       </div>
-    </div>
+    </div >
   );
 }

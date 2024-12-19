@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
-@tailwind utilities; */
+@tailwind utilities;
 
 :root {
   --primary: #75ff25;
-  --secondary: #ffffff;
+  --secondary: #f4f4f4;
 
-  --gray: #c7c9cb;
+  --gray: #f4f4f4;
   --darkgray: #b9b9ba;
 }
 
@@ -123,15 +123,15 @@ form textarea {
   color: rgb(0, 0, 0);
 }
 
-input[type=text] {  
+input[type="text"] {
   padding: 12px 20px;
   margin: 8px 0;
-  box-sizing:  border-box;
+  box-sizing: border-box;
 }
-button {  
+button {
   padding: 12px 20px;
   margin: 8px 0;
-  box-sizing:  border-box;
+  box-sizing: border-box;
 }
 
 form label span {
@@ -203,7 +203,7 @@ form label span {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   margin: 20px 0;
-  font-size: x-large;  
+  font-size: x-large;
   border: 0px solid;
 }
 .surah-name {
@@ -239,7 +239,7 @@ form label span {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   margin: 20px 0;
-  font-size: small; 
+  font-size: small;
 }
 
 .versess-details-1 p {
@@ -376,13 +376,14 @@ select::-ms-expand {
   background: rgb(229, 229, 229);
 }
 
-.footer {  
+.footer {
+  margin-bottom: 20px;
   background: rgb(229, 229, 229);
 }
 
 .main {
   text-align: left;
-  background: rgb(229, 229, 229);
+  background: RGB(244, 244, 244);
 }
 
 .aside-1 {
@@ -406,7 +407,7 @@ select::-ms-expand {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: start;
-  font-size: x-small;
+  font-size: small;
 }
 .info-container {
   display: flex;

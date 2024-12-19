@@ -19,7 +19,6 @@ export default function Verses() {
         setVerses(data);
         setSelectedSureName(data.data.name);
         setSelectedSureVerseCount(data.data.verse_count);
-        //console.log(data.data.foodnotes);
       }
 
       getVerses();
@@ -89,7 +88,7 @@ export default function Verses() {
                   </div>
                 </div>
 
-              </div >
+              </div>
             </>
           ))}
         </div>
