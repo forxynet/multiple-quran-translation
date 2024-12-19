@@ -133,10 +133,10 @@ export default function SearchTable(surahs) {
                       <div className="footer">
                         <div className="info-main ">
                           <div className="info-container">
-                            <p className="info-item">{`Surah Id ${item.surah_id}`}</p>
-                            <p className="info-item">{`Verse Number ${item.verse_number}`}</p>
-                            <p className="info-item">{`Page ${item.page}`}</p>
-                            <p className="info-item">{`Juz Number ${item.juz_number}`}</p>
+                            <p className="info-item">{`Surah ${item.surah_id}`}</p>
+                            <p className="info-item">{`Verse ${item.verse_number}`}</p>
+                            <p className="info-item">{`Page  ${item.page}`}</p>
+                            <p className="info-item">{`Juz   ${item.juz_number}`}</p>
                           </div>
                         </div>
                       </div>
