@@ -368,7 +368,7 @@ select::-ms-expand {
   background: rgb(229, 229, 229);
 }
 
-.footer {
+.footer {  
   background: rgb(229, 229, 229);
 }
 
@@ -393,6 +393,7 @@ select::-ms-expand {
   justify-content: center;
 }
 .info-main {
+  padding-left: 10px;
   margin-top: 10px;
   flex-direction: row;
   flex-wrap: wrap;
