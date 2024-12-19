@@ -411,10 +411,11 @@ select::-ms-expand {
 }
 .info-container {
   display: flex;
-  gap: 5px;
+  gap: 10px;
 }
 .info-item {
-  max-width: 60px;
+  max-width: 120px;
+  max-height: 15px;
   flex: 1 0 30%;
   border-style: 1px #c6c6c6;
 }
