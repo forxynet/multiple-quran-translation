@@ -52,8 +52,8 @@ export default function SearchTable(surahs) {
       filteredArray.push(
         data.filter(
           (item) =>
-            item.verse.includes(searchTerm) ||
-            item.translation.text.includes(searchTerm)
+            item.verse.includes(searchTerm.toLowerCase()) ||
+            item.translation.text.includes(searchTerm.toLowerCase())
         )
       )
     );
@@ -63,12 +63,12 @@ export default function SearchTable(surahs) {
     );
     filteredResultData.push(result);
 
-    console.log("result:" + result.length);
-    console.log("filteredResultData:" + filteredResultData.length);
+    //console.log("result:" + result.length);
+    //console.log("filteredResultData:" + filteredResultData.length);
 
     setFilteredData(...filteredResultData);
 
-    console.log("filteredData" + filteredData.length);
+    //console.log("filteredData" + filteredData.length);
 
     /** resul console */
     // filteredResultData.map(item => (
@@ -104,11 +104,10 @@ export default function SearchTable(surahs) {
             <>
               <div className=''>
                 <div className="main" key={item.id}>
-                  <p className="verses-details">{`${item.verse} (${item.verse_number})`}</p>
-                  <p className="verses-details-1">{`(${item.verse_number}) ${item.transcription}`}</p>
-                  <p className="verses-details-1">{`(${item.verse_number}) ${item.translation.text}`}</p>
+                  <p className="verses-details">{`${item.verse} (${item.surah_id}:${item.verse_number})`}</p>
+                  <p className="verses-details-1">{`(${item.surah_id}:${item.verse_number}) ${item.transcription}`}</p>
+                  <p className="verses-details-1">{`(${item.surah_id}:${item.verse_number}) ${item.translation.text}`}</p>
 
-                  {console.log(item)}
                   <div
                     style={{
                       display:
