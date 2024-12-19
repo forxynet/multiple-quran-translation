@@ -123,6 +123,17 @@ form textarea {
   color: rgb(0, 0, 0);
 }
 
+input[type=text] {  
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing:  border-box;
+}
+button {  
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing:  border-box;
+}
+
 form label span {
   margin-bottom: 10px;
 }
