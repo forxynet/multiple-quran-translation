@@ -7,7 +7,7 @@ export default function SearchTable(surahs) {
   const [loading, setLoading] = useState(true);
   const [verses, setVerses] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(null);
   const myArray = [];
 
   useEffect(() => {
