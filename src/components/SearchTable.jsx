@@ -101,9 +101,12 @@ export default function SearchTable(surahs) {
         &nbsp;
         <button onClick={handleFilteredData}>Search</button>
       </p>
-      <p>
-        results: {count}
-      </p>
+      <div style={{ display: count !== null ? "block" : "none" }}>
+        <p >
+          searcher result {count}
+        </p>
+      </div>
+
       <div className="container">
         <div>
           {loading && <div>Loading</div>}
