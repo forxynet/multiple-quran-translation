@@ -67,7 +67,6 @@ export default function Verses() {
                       }
                     </div>
                   </div>
-
                 </div>
 
                 <div className="footer">
