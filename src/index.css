@@ -41,7 +41,7 @@ button {
 header nav {
   display: flex;
   gap: 16px;
-  justify-content: end;
+  justify-content: start;
   max-width: 1200px;
   margin: 0 auto;
 }

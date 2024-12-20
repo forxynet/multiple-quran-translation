@@ -16,7 +16,7 @@ export default function RootLayout() {
           </div>
         </nav>
       </header>
-      <Breadcrumps />
+      {/* <Breadcrumps /> */}
       <main>
         <Outlet />
       </main>
