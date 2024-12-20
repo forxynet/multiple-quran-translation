@@ -6,10 +6,14 @@ export default function RootLayout() {
     <div className="root-layout">
       <header>
         <nav>
-          <h1>Kuran Tercümesi</h1>
-          <NavLink to="searchverses">Ayetleri Ara</NavLink>
-          <NavLink to="verses">Ayetler</NavLink>
-          <NavLink to="surahs">Sûreler</NavLink>
+          <div>
+            <div>
+              <h1>Kuran Tercümesi</h1>
+              <NavLink to="searchverses">Ayetleri Ara</NavLink>
+              <NavLink to="verses">Ayetler</NavLink>
+              <NavLink to="surahs">Sûreler</NavLink>
+            </div>
+          </div>
         </nav>
       </header>
       <Breadcrumps />
