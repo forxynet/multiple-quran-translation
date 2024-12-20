@@ -75,14 +75,14 @@ export default function SearchTable(surahs) {
     ...theme.typography.body2,
     color: theme.palette.text.secondary,
     '& > :not(style) ~ :not(style)': {
-      marginTop: theme.spacing(2),
+      marginTop: theme.spacing(1),
     },
   }));
 
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: '#fff',
     ...theme.typography.body2,
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
     textAlign: 'center',
     color: theme.palette.text.secondary,
     ...theme.applyStyles('dark', {

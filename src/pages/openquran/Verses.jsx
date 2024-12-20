@@ -44,7 +44,7 @@ export default function Verses() {
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: '#fff',
     ...theme.typography.body2,
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
     textAlign: 'center',
     color: theme.palette.text.secondary,
     ...theme.applyStyles('dark', {
@@ -80,44 +80,45 @@ export default function Verses() {
                 <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 20 }}>
                   {`${verses.data.zero.verse}`}
                 </Typography>
-                <Divider />
+                {/* <Divider /> */}
                 <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
                   {`${verses.data.zero.transcription}`}
                 </Typography>
-                <Divider />
+                {/* <Divider /> */}
                 <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
                   {`${verses.data.zero.translation.text}`}
                 </Typography>
               </div>
             }
 
-            <div key={ayet.verse_number}>
+            <div key={ayet.verse_number} style={{ paddingBottom: 5 }}>
               <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
                 {`${ayet.verse} (${selectedSureId}:${ayet.verse_number})`}
               </Typography>
-              <Divider />
+              {/* <Divider /> */}
               <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
                 {`(${selectedSureId}:${ayet.verse_number}) ${ayet.transcription}`}
               </Typography>
-              <Divider />
+              {/* <Divider /> */}
               <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
                 {`(${selectedSureId}:${ayet.verse_number}) ${ayet.translation.text}`}
               </Typography>
-            </div>
 
-            <div style={{ display: (ayet.translation.footnotes !== null ? 'block' : 'none') }}>
-              <div className="verses-footnotes">
-                {
-                  ayet.translation.footnotes !== null &&
-                  ayet.translation.footnotes.map(footnotes => (
-                    <p key={footnotes.id}>
-                      <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
-                        {`[${footnotes.number}] ${footnotes.text}`}
-                      </Typography>
-                    </p>
-                  ))
-                }
+              <div style={{ display: (ayet.translation.footnotes !== null ? 'block' : 'none') }}>
+                <div className="verses-footnotes">
+                  {
+                    ayet.translation.footnotes !== null &&
+                    ayet.translation.footnotes.map(footnotes => (
+                      <p key={footnotes.id}>
+                        <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
+                          {`[${footnotes.number}] ${footnotes.text}`}
+                        </Typography>
+                      </p>
+                    ))
+                  }
+                </div>
               </div>
+              <Divider />
             </div>
             {verses.data?.verse_count === ayet.verse_number &&
               <Box sx={{ flexGrow: 1 }} style={{ paddingBottom: 15, paddingTop: 15 }}>
@@ -165,6 +166,7 @@ export default function Verses() {
                 </Grid>
               </Box>
             }
+
           </div>
         </>
       ))
