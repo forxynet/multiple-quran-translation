@@ -131,7 +131,7 @@ export default function SearchTable(surahs) {
               data.map((ayet) => (
                 <>
                   <div key={ayet.id}>
-                    <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 20 }}>
+                    <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 20 }}>
                       {`${ayet.verse} (${ayet.surah_id}:${ayet.verse_number})`}
                     </Typography>
                     <Divider />
