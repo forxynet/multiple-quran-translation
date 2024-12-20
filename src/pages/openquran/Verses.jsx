@@ -55,7 +55,7 @@ export default function Verses() {
                     <div className="py-3 sm:py-4 ">
                       <div className="flex items-center">
                         <div className="flex-1 min-w-0 ms-4">
-                          <h5 className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                          <h5 style={{ fontSize: 18 }} className="text-sm font-medium text-gray-900 truncate dark:text-white">
                             {`${verses.data.zero.verse}`}
                           </h5>
                         </div>
