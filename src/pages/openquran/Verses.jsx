@@ -134,7 +134,7 @@ export default function Verses() {
                     <div className="info-container">
                       <p className="info-item">{`Sûre ${ayet.surah_id}`}</p>
                       <p className="info-item">{`Ayet ${ayet.verse_number}`}</p>
-                      <p className="info-item">{`Sayfa ${ayet.page}:${ayet.id}`}</p>
+                      <p className="">{`Sayfa ${ayet.page}:${ayet.id}`}</p>
                       <p className="info-item">{`Cüz ${ayet.juz_number}`}</p>
                     </div>
                   </div>

@@ -417,7 +417,7 @@ select::-ms-expand {
 .info-item {
   max-width: 80px;
   max-height: 15px;
-  flex: 1 0 20%;
+  flex: 0 0 18%;
   border-style: 1px #c6c6c6;
 }
 
