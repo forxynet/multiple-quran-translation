@@ -3,9 +3,8 @@ import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import DirectionsIcon from '@mui/icons-material/Directions';
+import { styled } from '@mui/material/styles';
 
 const API_URL = `https://api.acikkuran.com/surah/`;
 
@@ -84,6 +83,14 @@ export default function SearchTable(surahs) {
     setFilteredData(...filteredResultData);
   }
 
+  const Root = styled('div')(({ theme }) => ({
+    width: '100%',
+    ...theme.typography.body2,
+    color: theme.palette.text.secondary,
+    '& > :not(style) ~ :not(style)': {
+      marginTop: theme.spacing(2),
+    },
+  }));
   return (
     <div>
 
@@ -105,10 +112,11 @@ export default function SearchTable(surahs) {
       </Paper>
 
       <div style={{ paddingBottom: 20, display: count !== null ? "block" : "none" }}>
-        <p >
-          arama sonucu {count}
+        <p>
+          <Root>
+            <Divider>{`( arama sonucu ${count} )`}</Divider>
+          </Root>
         </p>
-        <hr />
       </div>
 
       <div className="container">
