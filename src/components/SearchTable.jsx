@@ -96,14 +96,14 @@ export default function SearchTable(surahs) {
       </p>
       <div style={{ paddingBottom: 20, display: count !== null ? "block" : "none" }}>
         <p >
-          searcher result {count}
+          arama sonucu {count}
         </p>
         <hr />
       </div>
 
       <div className="container">
         <div>
-          {loading && <div>Loading</div>}
+          {loading && <div>yükleniyor...</div>}
           {!loading && filteredData !== null &&
             filteredData.map((data) =>
               data.map((ayet) => (

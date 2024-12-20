@@ -16,7 +16,7 @@ export default function Verses() {
           throw new Error(`HTTP error: Status ${response.status}`);
         }
         const data = await response.json();
-        //console.log(data.data.zero)
+        console.log(data)
         setVerses(data);
         setSelectedSureName(data.data.name);
         setSelectedSureVerseCount(data.data.verse_count);

@@ -5,15 +5,11 @@ export default function RootLayout() {
   return (
     <div className="root-layout">
       <header>
-        <nav className='menu'>
-          <h1>Quran Translation</h1>
-          {/* <NavLink to="/">Home</NavLink>
-          <NavLink to="about">About</NavLink>
-          <NavLink to="help">Help</NavLink>          */}
-          <NavLink to="searchverses">Search Verses</NavLink>
-          <NavLink to="verses">Verses</NavLink>         
-          <NavLink to="surahs">Surahs</NavLink>         
-          {/* <NavLink to="chapters">Chapters</NavLink> */}
+        <nav>
+          <h1>Kuran Tercümesi</h1>
+          <NavLink to="searchverses">Ayetleri Ara</NavLink>
+          <NavLink to="verses">Ayetler</NavLink>
+          <NavLink to="surahs">Sûreler</NavLink>
         </nav>
       </header>
       <Breadcrumps />
