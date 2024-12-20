@@ -16,6 +16,7 @@ export default function Verses() {
           throw new Error(`HTTP error: Status ${response.status}`);
         }
         const data = await response.json();
+        //console.log(data.data.zero)
         setVerses(data);
         setSelectedSureName(data.data.name);
         setSelectedSureVerseCount(data.data.verse_count);
@@ -47,7 +48,39 @@ export default function Verses() {
               <h4 className="text-xl font-bold leading-none text-gray-900 dark:text-white">{`(${selectedSureId}) ${selectedSureName} Sûresi (${selectedSureVerseCount})`}</h4>
             </div>
             <div className="flow-root">
+
               <div className="divide-y divide-gray-200 dark:divide-gray-700">
+                {verses.data.zero !== null &&
+                  <div style={{ display: (selectedSureId > 1 && ayet.verse_number == 1 ? 'block' : 'none') }}>
+                    <div className="py-3 sm:py-4">
+                      <div className="flex items-center">
+                        <div className="flex-1 min-w-0 ms-4">
+                          <h5 className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            {`${verses.data.zero.verse}`}
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="py-3 sm:py-4">
+                      <div className="flex items-center">
+                        <div className="flex-1 min-w-0 ms-4">
+                          <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            {`${verses.data.zero.transcription}`}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="py-3 sm:py-4">
+                      <div className="flex items-center">
+                        <div className="flex-1 min-w-0 ms-4">
+                          <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            {`${verses.data.zero.translation.text}`}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                }
                 <div className="py-3 sm:py-4">
                   <div className="flex items-center">
                     <div className="flex-1 min-w-0 ms-4">
@@ -66,6 +99,7 @@ export default function Verses() {
                     </div>
                   </div>
                 </div>
+
                 <div className="py-3 sm:py-4">
                   <div className="flex items-center">
                     <div className="flex-1 min-w-0 ms-4">
@@ -107,12 +141,13 @@ export default function Verses() {
                 </div>
 
               </div>
-            </div>
-          </div>
+            </div >
+          </div >
 
         </>
-      ))}
-    </div>
+      ))
+      }
+    </div >
   )
 }
 

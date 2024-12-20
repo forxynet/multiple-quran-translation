@@ -316,6 +316,7 @@ select {
   background-color: var(--darkgray);
   background-image: none;
   cursor: pointer;
+  padding-bottom: 10px;
 }
 /* Remove IE arrow */
 select::-ms-expand {
