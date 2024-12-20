@@ -1,14 +1,10 @@
 import { useLoaderData } from "react-router"
-
-
-//import { createMuiTheme, ThemeProvider } from '@material-ui/core';
-//import AudioPlayer from 'material-ui-audio-player';
-//import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-//import { makeStyles } from '@material-ui/styles';
+
+import AudioPlayer from 'material-ui-audio-player';
 
 export async function loader() {
   const response = await fetch('https://api.acikkuran.com/surahs');
@@ -112,14 +108,13 @@ export default function SurahAudio() {
               </Box> */}
 
 
-              {/* <ThemeProvider theme={muiTheme}>
-                <AudioPlayer
-                  width="500px"
-                  useStyles={useStyles}
-                  src={sure.audio.mp3}
-                  loop={true}
-                />
-              </ThemeProvider> */}
+
+              <AudioPlayer
+                width="500px"
+
+                src={sure.audio.mp3}
+                loop={true}
+              />
             </Box>
           </Card>
 
