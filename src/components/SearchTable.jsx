@@ -109,7 +109,7 @@ export default function SearchTable(surahs) {
               data.map((item) => (
                 <>
                   <div key={item.id} className="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-                    <h5 className="mb-2 text-9xl font-bold text-gray-900 dark:text-white">{`${item.verse} (${item.surah_id}:${item.verse_number})`}</h5>
+                    <h5 className="mb-2 text-5xl font-bold text-gray-900 sm:text-xlg dark:text-white">{`${item.verse} (${item.surah_id}:${item.verse_number})`}</h5>
                     <p className="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">{`(${item.surah_id}:${item.verse_number}) ${item.transcription}`}</p>
                     <p className="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">{`(${item.surah_id}:${item.verse_number}) ${item.translation.text}`}</p>
 

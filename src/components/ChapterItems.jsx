@@ -1,5 +1,5 @@
 const ChapterItems = (data) => {
-  console.log(data)
+  //console.log(data)
   return (
     <>
       <p>{`[${data.verse}] ${data.text}.`}</p>

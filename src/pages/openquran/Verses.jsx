@@ -27,7 +27,7 @@ export default function Verses() {
   }, [selectedSureId]);
 
   return (
-    <div className='chapters'>
+    <div>
       <div className="container">
         <div className="select">
           <select value={selectedSureId} onChange={e => setSelectedSureId(e.target.value)}>
@@ -40,60 +40,78 @@ export default function Verses() {
           </select>
         </div>
       </div>
-
-      <div className="container">
-        <div>
-          {verses && verses.data.verses.map((ayet) => (
-            <>
-              <div className='wrapper'>
-                <div className='header'>
-                  <p>{selectedSureName} Sûresi</p>
+      {verses && verses.data.verses.map((ayet) => (
+        <>
+          <div className="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+            <div className="flex items-center justify-between mb-4">
+              <h4 className="text-xl font-bold leading-none text-gray-900 dark:text-white">{`(${selectedSureId}) ${selectedSureName} Sûresi (${selectedSureVerseCount})`}</h4>
+            </div>
+            <div className="flow-root">
+              <div className="divide-y divide-gray-200 dark:divide-gray-700">
+                <div className="py-3 sm:py-4">
+                  <div className="flex items-center">
+                    <div className="flex-1 min-w-0 ms-4">
+                      <p className="text-sm font-xlarge text-gray-900 truncate dark:text-white">
+                        <h4 className="text-xl font-bold leading-none text-gray-900 dark:text-white">{`${ayet.verse} (${selectedSureId}:${ayet.verse_number})`}</h4>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="py-3 sm:py-4">
+                  <div className="flex items-center">
+                    <div className="flex-1 min-w-0 ms-4">
+                      <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                        {`(${selectedSureId}:${ayet.verse_number}) ${ayet.transcription}`}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="py-3 sm:py-4">
+                  <div className="flex items-center">
+                    <div className="flex-1 min-w-0 ms-4">
+                      <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                        {`(${selectedSureId}:${ayet.verse_number}) ${ayet.translation.text}`}
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
-                <div className='main'>
-                  <p className="verses-details">{`${ayet.verse} (${ayet.verse_number})`}</p>
-                  <p className="verses-details-1">{`(${ayet.verse_number}) ${ayet.transcription}`}</p>
-                  <p className="verses-details-1">{`(${ayet.verse_number}) ${ayet.translation.text}`}</p>
-
-                  <div style={{ display: (ayet.translation.footnotes !== null ? 'block' : 'none') }}>
-                    <hr />
-                    <div className="verses-footnotes">
-                      {
-                        ayet.translation.footnotes !== null &&
-                        ayet.translation.footnotes.map(footnotes => (
-                          <p key={footnotes.id}>{`[${footnotes.number}] ${footnotes.text}`}</p>
-                        ))
-                      }
+                <div className="py-3 sm:py-4">
+                  <div className="flex items-center">
+                    <div className="flex-1 min-w-0 ms-4">
+                      <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                        <div style={{ display: (ayet.translation.footnotes !== null ? 'block' : 'none') }}>
+                          <div className="verses-footnotes">
+                            {
+                              ayet.translation.footnotes !== null &&
+                              ayet.translation.footnotes.map(footnotes => (
+                                <p key={footnotes.id}>{`[${footnotes.number}] ${footnotes.text}`}</p>
+                              ))
+                            }
+                          </div>
+                        </div>
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 <div className="footer">
-                  <hr />
                   <div className="info-main ">
                     <div className="info-container">
-                      <p className="info-item">Sure No</p>
-                      <p className="info-item">Ayet Sayısı</p>
-                      <p className="info-item">Ayet No</p>
-                      <p className="info-item">Sayfa</p>
-                      <p className="info-item">Cüz</p>
-                    </div>
-                    <div className="info-container">
-                      <p className="info-item">{selectedSureId}</p>
-                      <p className="info-item">{selectedSureVerseCount}</p>
-                      <p className="info-item">{ayet.id}</p>
-                      <p className="info-item">{ayet.page}</p>
-                      <p className="info-item">{ayet.juz_number}</p>
+                      <p className="info-item">{`Surah ${ayet.surah_id}`}</p>
+                      <p className="info-item">{`Verse ${ayet.verse_number}`}</p>
+                      <p className="info-item">{`Page  ${ayet.page}`}</p>
+                      <p className="info-item">{`Juz   ${ayet.juz_number}`}</p>
                     </div>
                   </div>
                 </div>
-
               </div>
-            </>
-          ))}
-        </div>
-      </div>
-    </div >
+            </div>
+          </div>
+
+        </>
+      ))}
+    </div>
   )
 }
 
