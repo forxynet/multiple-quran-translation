@@ -106,21 +106,21 @@ export default function SearchTable(surahs) {
           {loading && <div>Loading</div>}
           {!loading && filteredData !== null &&
             filteredData.map((data) =>
-              data.map((item) => (
+              data.map((ayet) => (
                 <>
-                  <div key={item.id} className="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-                    <h5 className="mb-2 text-5xl font-bold text-gray-900 sm:text-xlg dark:text-white">{`${item.verse} (${item.surah_id}:${item.verse_number})`}</h5>
-                    <p className="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">{`(${item.surah_id}:${item.verse_number}) ${item.transcription}`}</p>
-                    <p className="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">{`(${item.surah_id}:${item.verse_number}) ${item.translation.text}`}</p>
+                  <div key={ayet.id} className="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                    <h5 className="mb-2 text-5xl font-bold text-gray-900 sm:text-xlg dark:text-white">{`${ayet.verse} (${ayet.surah_id}:${ayet.verse_number})`}</h5>
+                    <p className="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">{`(${ayet.surah_id}:${ayet.verse_number}) ${ayet.transcription}`}</p>
+                    <p className="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">{`(${ayet.surah_id}:${ayet.verse_number}) ${ayet.translation.text}`}</p>
 
                     <div className="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
                       <div className="text-left rtl:text-right">
                         <div className="mb-1 text-xs">
-                          <div style={{ display: item.translation.footnotes !== null ? "block" : "none" }}>
+                          <div style={{ display: ayet.translation.footnotes !== null ? "block" : "none" }}>
                             <div className="verses-footnotes">
                               {
-                                item.translation.footnotes !== null &&
-                                item.translation.footnotes.map(footnotes => (
+                                ayet.translation.footnotes !== null &&
+                                ayet.translation.footnotes.map(footnotes => (
                                   <p key={footnotes.id}>{`[${footnotes.number}] ${footnotes.text}`}</p>
                                 ))
                               }
@@ -133,10 +133,10 @@ export default function SearchTable(surahs) {
                       <div className="footer">
                         <div className="info-main ">
                           <div className="info-container">
-                            <p className="info-item">{`Surah ${item.surah_id}`}</p>
-                            <p className="info-item">{`Verse ${item.verse_number}`}</p>
-                            <p className="info-item">{`Page  ${item.page}`}</p>
-                            <p className="info-item">{`Juz   ${item.juz_number}`}</p>
+                            <p className="info-item">{`Sûre ${ayet.surah_id}`}</p>
+                            <p className="info-item">{`Ayet ${ayet.verse_number}`}</p>
+                            <p className="info-item">{`Sayfa  ${ayet.page}`}</p>
+                            <p className="info-item">{`Cüz   ${ayet.juz_number}`}</p>
                           </div>
                         </div>
                       </div>
