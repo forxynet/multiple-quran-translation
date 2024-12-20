@@ -1,5 +1,13 @@
 import { useState, useEffect } from "react";
 import { useLoaderData } from "react-router"
+import Paper from '@mui/material/Paper';
+import InputBase from '@mui/material/InputBase';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import SearchIcon from '@mui/icons-material/Search';
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid2';
 
 export default function Verses() {
   const surahs = useLoaderData();
@@ -26,6 +34,18 @@ export default function Verses() {
     }
 
   }, [selectedSureId]);
+
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+    ...theme.applyStyles('dark', {
+      backgroundColor: '#1A2027',
+    }),
+  }));
+
 
   return (
     <div>
@@ -129,7 +149,52 @@ export default function Verses() {
                   </div>
                 </div>
 
-                <div className="footer">
+                <Box sx={{ flexGrow: 1 }} style={{ paddingBottom: 15 }}>
+                  <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                    <Grid size={3}>
+                      <Item>
+                        Sure
+                      </Item>
+                    </Grid>
+                    <Grid size={3}>
+                      <Item>
+                        Ayet
+                      </Item>
+                    </Grid>
+                    <Grid size={3}>
+                      <Item>
+                        Sayfa
+                      </Item>
+                    </Grid>
+                    <Grid size={3}>
+                      <Item>
+                        Cüz
+                      </Item>
+                    </Grid>
+                    <Grid size={3}>
+                      <Item>
+                        {ayet.surah_id}
+                      </Item>
+                    </Grid>
+                    <Grid size={3}>
+                      <Item>
+                        {ayet.verse_number}
+                      </Item>
+                    </Grid>
+                    <Grid size={3}>
+                      <Item>
+                        {ayet.page}
+                      </Item>
+                    </Grid>
+                    <Grid size={3}>
+                      <Item>
+                        {ayet.juz_number}
+                      </Item>
+                    </Grid>
+                  </Grid>
+                </Box>
+
+                {/* <div className="footer">
                   <div className="info-main ">
                     <div className="info-container">
                       <p className="info-item">{`Sûre ${ayet.surah_id}`}</p>
@@ -138,7 +203,7 @@ export default function Verses() {
                       <p className="info-item">{`Cüz ${ayet.juz_number}`}</p>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
               </div>
             </div>

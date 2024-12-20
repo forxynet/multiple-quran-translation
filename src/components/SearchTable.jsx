@@ -192,17 +192,6 @@ export default function SearchTable(surahs) {
                         </Grid>
                       </Box>
 
-                      {/* <div className="footer">
-                        <div className="info-main ">
-                          <div className="info-container">
-                            <p className="info-item">{`Sûre ${ayet.surah_id}`}</p>
-                            <p className="info-item">{`Ayet ${ayet.verse_number}`}</p>
-                            <p className="">{`Sayfa ${ayet.page}`}</p>
-                            <p className="info-item">{`Cüz ${ayet.juz_number}`}</p>
-                          </div>
-                        </div>
-                      </div> */}
-
                     </div>
                   </div >
                 </>
