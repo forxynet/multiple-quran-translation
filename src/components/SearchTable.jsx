@@ -7,6 +7,11 @@ import SearchIcon from '@mui/icons-material/Search';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 const API_URL = `https://api.acikkuran.com/surah/`;
 
@@ -125,74 +130,82 @@ export default function SearchTable(surahs) {
             filteredData.map((data) =>
               data.map((ayet) => (
                 <>
-                  <div key={ayet.id} className="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-                    <h5 className="mb-2 text-5xl font-bold text-gray-900 sm:text-xlg dark:text-white">{`${ayet.verse} (${ayet.surah_id}:${ayet.verse_number})`}</h5>
-                    <p className="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">{`(${ayet.surah_id}:${ayet.verse_number}) ${ayet.transcription}`}</p>
-                    <p className="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">{`(${ayet.surah_id}:${ayet.verse_number}) ${ayet.translation.text}`}</p>
+                  <div key={ayet.id}>
+                    <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 20 }}>
+                      {`${ayet.verse} (${ayet.surah_id}:${ayet.verse_number})`}
+                    </Typography>
+                    <Divider />
+                    <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 15 }}>
+                      {`(${ayet.surah_id}:${ayet.verse_number}) ${ayet.transcription}`}
+                    </Typography>
+                    <Divider />
+                    <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 15 }}>
+                      {`(${ayet.surah_id}:${ayet.verse_number}) ${ayet.translation.text}`}
+                    </Typography>
 
-                    <div className="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
-                      <div className="text-left rtl:text-right">
-                        <div className="mb-1 text-xs">
-                          <div style={{ display: ayet.translation.footnotes !== null ? "block" : "none" }}>
-                            <div className="verses-footnotes">
-                              {
-                                ayet.translation.footnotes !== null &&
-                                ayet.translation.footnotes.map(footnotes => (
-                                  <p key={footnotes.id}>{`[${footnotes.number}] ${footnotes.text}`}</p>
-                                ))
-                              }
-                            </div>
-                          </div>
+                    <div>
+                      <div style={{ display: ayet.translation.footnotes !== null ? "block" : "none" }}>
+                        <div className="verses-footnotes">
+                          {
+                            ayet.translation.footnotes !== null &&
+                            ayet.translation.footnotes.map(footnotes => (
+                              <p key={footnotes.id}>
+                                <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 15 }}>
+                                  {`[${footnotes.number}] ${footnotes.text}`}
+                                </Typography>
+                              </p>
+                            ))
+                          }
                         </div>
-                        <div className="-mt-1 font-sans text-sm font-semibold"></div>
                       </div>
-
-                      <Box sx={{ flexGrow: 1 }} style={{ paddingBottom: 15 }}>
-                        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                          <Grid size={3}>
-                            <Item>
-                              Sure
-                            </Item>
-                          </Grid>
-                          <Grid size={3}>
-                            <Item>
-                              Ayet
-                            </Item>
-                          </Grid>
-                          <Grid size={3}>
-                            <Item>
-                              Sayfa
-                            </Item>
-                          </Grid>
-                          <Grid size={3}>
-                            <Item>
-                              Cüz
-                            </Item>
-                          </Grid>
-                          <Grid size={3}>
-                            <Item>
-                              {ayet.surah_id}
-                            </Item>
-                          </Grid>
-                          <Grid size={3}>
-                            <Item>
-                              {ayet.verse_number}
-                            </Item>
-                          </Grid>
-                          <Grid size={3}>
-                            <Item>
-                              {ayet.page}
-                            </Item>
-                          </Grid>
-                          <Grid size={3}>
-                            <Item>
-                              {ayet.juz_number}
-                            </Item>
-                          </Grid>
-                        </Grid>
-                      </Box>
-
                     </div>
+
+                    <Box sx={{ flexGrow: 1 }} style={{ paddingBottom: 15 }}>
+                      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                        <Grid size={3}>
+                          <Item>
+                            Sure
+                          </Item>
+                        </Grid>
+                        <Grid size={3}>
+                          <Item>
+                            Ayet
+                          </Item>
+                        </Grid>
+                        <Grid size={3}>
+                          <Item>
+                            Sayfa
+                          </Item>
+                        </Grid>
+                        <Grid size={3}>
+                          <Item>
+                            Cüz
+                          </Item>
+                        </Grid>
+                        <Grid size={3}>
+                          <Item>
+                            {ayet.surah_id}
+                          </Item>
+                        </Grid>
+                        <Grid size={3}>
+                          <Item>
+                            {ayet.verse_number}
+                          </Item>
+                        </Grid>
+                        <Grid size={3}>
+                          <Item>
+                            {ayet.page}
+                          </Item>
+                        </Grid>
+                        <Grid size={3}>
+                          <Item>
+                            {ayet.juz_number}
+                          </Item>
+                        </Grid>
+                      </Grid>
+                    </Box>
+
+
                   </div >
                 </>
               ))
