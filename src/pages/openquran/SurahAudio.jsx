@@ -45,7 +45,7 @@ export default function SurahAudio() {
         <Grid container spacing={2}>
           <Grid size={4}>
             <Paper style={{ maxHeight: 500, overflow: 'auto' }}>
-              <List sx={{ width: '100%', maxWidth: 150, bgcolor: 'background.paper' }}>
+              <List sx={{ width: '100%', maxWidth: 350, bgcolor: 'background.paper' }}>
                 {surahs.data.map((sure) => (
                   <>
                     <ListItem alignItems="flex-start">
