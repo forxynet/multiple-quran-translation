@@ -1,5 +1,5 @@
 import { Outlet, NavLink } from 'react-router-dom';
-import Breadcrumps from '../components/Breadcrumbs';
+//import Breadcrumps from '../components/Breadcrumbs';
 
 export default function RootLayout() {
   return (

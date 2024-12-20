@@ -15,7 +15,6 @@
     "@emotion/styled": "^11.14.0",
     "@fontsource/roboto": "^5.1.0",
     "@material-tailwind/react": "^2.1.10",
-    "@material-ui/styles": "^4.11.5",
     "@mui/icons-material": "^6.2.0",
     "@mui/material": "^6.2.1",
     "@mui/styled-engine-sc": "^6.2.0",
