@@ -8,6 +8,10 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Typography from '@mui/material/Typography';
 
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid2';
+
 //import AudioPlayer from 'material-ui-audio-player';
 
 export async function loader() {
@@ -37,32 +41,44 @@ export default function SurahAudio() {
   return (
     <div className='chapters'>
 
-      <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-        {surahs.data.map((sure) => (
-          <>
-            <ListItem alignItems="flex-start">
-              <ListItemAvatar>
-                {sure.verse_count}
-              </ListItemAvatar>
-              <ListItemText value={sure.id}
-                primary={sure.name_original}
-                secondary={
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={2}>
+          <Grid size={4}>
+            <Paper style={{ maxHeight: 350, overflow: 'auto' }}>
+              <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+                {surahs.data.map((sure) => (
                   <>
-                    <Typography
-                      component="span"
-                      variant="body2"
-                      sx={{ color: 'text.primary', display: 'inline' }}
-                    >
-                      {sure.name}
-                    </Typography>
+                    <ListItem alignItems="flex-start">
+                      <ListItemAvatar>
+                        {sure.verse_count}
+                      </ListItemAvatar>
+                      <ListItemText value={sure.id}
+                        primary={sure.name_original}
+                        secondary={
+                          <>
+                            <Typography
+                              component="span"
+                              variant="body2"
+                              sx={{ color: 'text.primary', display: 'inline' }}
+                            >
+                              {sure.name}
+                            </Typography>
+                          </>
+                        }
+                      />
+                    </ListItem >
+                    <Divider variant="inset" component="li" />
                   </>
-                }
-              />
-            </ListItem >
-            <Divider variant="inset" component="li" />
-          </>
-        ))}
-      </List>
+                ))}
+              </List>
+            </Paper>
+          </Grid>
+          <Grid size={8}>
+            Player area
+          </Grid>
+        </Grid>
+      </Box>
+
     </div>
   )
 }
