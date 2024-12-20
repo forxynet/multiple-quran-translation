@@ -130,11 +130,15 @@ export default function SearchTable(surahs) {
                     <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 20 }}>
                       {`${ayet.verse} (${ayet.surah_id}:${ayet.verse_number})`}
                     </Typography>
-                    <Divider />
+                    <div style={{ paddingBottom: 15 }}>
+                      <Divider />
+                    </div>
                     <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
                       {`(${ayet.surah_id}:${ayet.verse_number}) ${ayet.transcription}`}
                     </Typography>
-                    <Divider />
+                    <div style={{ paddingBottom: 15 }}>
+                      <Divider />
+                    </div>
                     <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
                       {`(${ayet.surah_id}:${ayet.verse_number}) ${ayet.translation.text}`}
                     </Typography>
