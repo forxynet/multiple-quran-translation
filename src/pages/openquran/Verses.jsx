@@ -75,7 +75,9 @@ export default function Verses() {
                 <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 17, textAlign: 'center' }}>
                   {`(${selectedSureId}:${selectedSureVerseCount}) ${selectedSureName} Sûresi`}
                 </Typography>
-                <Divider />
+                <div style={{ paddingBottom: 15, paddingTop: 15 }}>
+                  <Divider />
+                </div>
               </>
             }
             {verses.data.zero !== null &&
@@ -83,7 +85,9 @@ export default function Verses() {
                 <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 17, textAlign: 'center' }}>
                   {`(${selectedSureId}:${selectedSureVerseCount}) ${selectedSureName} Sûresi`}
                 </Typography>
-                <Divider />
+                <div style={{ paddingBottom: 15, paddingTop: 15 }}>
+                  <Divider />
+                </div>
 
                 <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 17 }}>
                   {`${verses.data.zero.verse}`}
@@ -96,7 +100,7 @@ export default function Verses() {
                 <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
                   {`${verses.data.zero.translation.text}`}
                 </Typography>
-                <Divider />
+
               </div>
             }
 
@@ -127,8 +131,12 @@ export default function Verses() {
                   }
                 </div>
               </div>
+            </div>
+
+            <div style={{ paddingBottom: 15 }}>
               <Divider />
             </div>
+
             {verses.data?.verse_count === ayet.verse_number &&
               <Box sx={{ flexGrow: 1 }} style={{ paddingBottom: 15, paddingTop: 15 }}>
                 <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>

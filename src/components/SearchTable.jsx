@@ -93,7 +93,6 @@ export default function SearchTable(surahs) {
 
   return (
     <div>
-
       <Paper component="form" sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 315 }}>
         <InputBase
           sx={{ ml: 1, flex: 1 }}
@@ -210,8 +209,7 @@ export default function SearchTable(surahs) {
                     <div style={{ paddingBottom: 15 }}>
                       <Divider />
                     </div>
-
-                  </div >
+                  </div>
                 </>
               ))
             )}
