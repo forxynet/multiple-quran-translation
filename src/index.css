@@ -403,8 +403,7 @@ select::-ms-expand {
   align-items: center;
   justify-content: center;
 }
-.info-main {
-  padding-left: 10px;
+.info-main {  
   margin-top: 10px;
   flex-direction: row;
   flex-wrap: wrap;
@@ -418,7 +417,7 @@ select::-ms-expand {
 .info-item {
   max-width: 80px;
   max-height: 15px;
-  flex: 1 0 30%;
+  flex: 1 0 20%;
   border-style: 1px #c6c6c6;
 }
 
