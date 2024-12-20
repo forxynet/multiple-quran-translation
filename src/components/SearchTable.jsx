@@ -156,6 +156,9 @@ export default function SearchTable(surahs) {
                       </div>
                     </div>
 
+                    <div style={{ paddingBottom: 15 }}>
+                      <Divider />
+                    </div>
                     <Box sx={{ flexGrow: 1 }} style={{ paddingBottom: 15 }}>
                       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                         <Grid size={3}>
@@ -200,7 +203,9 @@ export default function SearchTable(surahs) {
                         </Grid>
                       </Grid>
                     </Box>
-
+                    <div style={{ paddingBottom: 15 }}>
+                      <Divider />
+                    </div>
 
                   </div >
                 </>
