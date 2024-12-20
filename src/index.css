@@ -353,6 +353,7 @@ select::-ms-expand {
   display: flex;
   justify-content: center;
   align-items: absolute;
+  margin-bottom: 20px;
 }
 
 */ .down_note {
