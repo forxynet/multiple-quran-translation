@@ -43,16 +43,16 @@ export default function Verses() {
       </div>
       {verses && verses.data.verses.map((ayet) => (
         <>
-          <div className="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div className="w-full max-w-md p-4 bg-gray-200 border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
             <div className="flex items-center justify-between mb-4">
-              <h4 className="text-xl font-bold leading-none text-gray-900 dark:text-white">{`(${selectedSureId}) ${selectedSureName} Sûresi (${selectedSureVerseCount})`}</h4>
+              <h4 className="text-xl font-bold leading-none text-gray-900 dark:text-white">{`(${selectedSureId}:${selectedSureVerseCount}) ${selectedSureName} Sûresi`}</h4>
             </div>
             <div className="flow-root">
 
               <div className="divide-y divide-gray-200 dark:divide-gray-700">
                 {verses.data.zero !== null &&
-                  <div style={{ display: (selectedSureId > 1 && ayet.verse_number == 1 ? 'block' : 'none') }}>
-                    <div className="py-3 sm:py-4">
+                  <div style={{ display: (selectedSureId > 1 && ayet.verse_number == 1 ? 'block' : 'none'), marginTop: 20 }}>
+                    <div className="py-3 sm:py-4 ">
                       <div className="flex items-center">
                         <div className="flex-1 min-w-0 ms-4">
                           <h5 className="text-sm font-medium text-gray-900 truncate dark:text-white">
@@ -141,9 +141,8 @@ export default function Verses() {
                 </div>
 
               </div>
-            </div >
-          </div >
-
+            </div>
+          </div>
         </>
       ))
       }
