@@ -82,7 +82,7 @@ export default function SearchTable(surahs) {
       <p>
         <input
           type="text"
-          placeholder="seach by arabic or text"
+          placeholder="ara arabic yada text"
           value={searchTerm}
           onChange={(e) => {
             setSearchTerm(e.target.value);
@@ -92,7 +92,7 @@ export default function SearchTable(surahs) {
           className="mb-4 p-2 border border-gray-300 rounded"
         />
         &nbsp;
-        <button onClick={handleFilteredData}>Search</button>
+        <button onClick={handleFilteredData}>Ara</button>
       </p>
       <div style={{ paddingBottom: 20, display: count !== null ? "block" : "none" }}>
         <p >
