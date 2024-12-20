@@ -31,6 +31,7 @@ export default function Verses() {
           throw new Error(`HTTP error: Status ${response.status}`);
         }
         const data = await response.json();
+        //console.log(verses.data.name)
         setVerses(data);
         setSelectedSureName(data.data.name);
         setSelectedSureVerseCount(data.data.verse_count);
@@ -48,7 +49,7 @@ export default function Verses() {
     textAlign: 'center',
     color: theme.palette.text.secondary,
     ...theme.applyStyles('dark', {
-      backgroundColor: '#1A2027',
+      backgroundColor: '#f7f7f6',
     }),
   }));
 
@@ -68,38 +69,46 @@ export default function Verses() {
       </div>
       {verses && verses.data.verses.map((ayet) => (
         <>
-
           <div key={ayet.id}>
             {ayet.id === 1 &&
-              <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 20 }}>
-                {`(${selectedSureId}:${selectedSureVerseCount}) ${selectedSureName} Sûresi`}
-              </Typography>
+              <>
+                <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 17, textAlign: 'center' }}>
+                  {`(${selectedSureId}:${selectedSureVerseCount}) ${selectedSureName} Sûresi`}
+                </Typography>
+                <Divider />
+              </>
             }
             {verses.data.zero !== null &&
               <div key={verses.data.zero.verse} style={{ display: (selectedSureId > 1 && ayet.verse_number == 1 ? 'block' : 'none'), marginTop: 20 }}>
-                <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 20 }}>
+                <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 17, textAlign: 'center' }}>
+                  {`(${selectedSureId}:${selectedSureVerseCount}) ${selectedSureName} Sûresi`}
+                </Typography>
+                <Divider />
+
+                <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 17 }}>
                   {`${verses.data.zero.verse}`}
                 </Typography>
-                {/* <Divider /> */}
+
                 <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
                   {`${verses.data.zero.transcription}`}
                 </Typography>
-                {/* <Divider /> */}
+
                 <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
                   {`${verses.data.zero.translation.text}`}
                 </Typography>
+                <Divider />
               </div>
             }
 
             <div key={ayet.verse_number} style={{ paddingBottom: 5 }}>
-              <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
+              <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 17 }}>
                 {`${ayet.verse} (${selectedSureId}:${ayet.verse_number})`}
               </Typography>
-              {/* <Divider /> */}
+
               <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
                 {`(${selectedSureId}:${ayet.verse_number}) ${ayet.transcription}`}
               </Typography>
-              {/* <Divider /> */}
+
               <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
                 {`(${selectedSureId}:${ayet.verse_number}) ${ayet.translation.text}`}
               </Typography>
