@@ -10,8 +10,8 @@ export default function RootLayout() {
             <div>
               <h1>Kuran Tercümesi</h1>
               <NavLink to="searchverses">Ayetleri Ara</NavLink>
-              <NavLink to="verses">Ayetler</NavLink>
-              <NavLink to="surahs">Sûreler</NavLink>
+              <NavLink to="verses">Sûre Oku</NavLink>
+              <NavLink to="surahs">Sûre Dinle</NavLink>
             </div>
           </div>
         </nav>

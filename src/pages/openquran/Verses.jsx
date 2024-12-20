@@ -32,7 +32,7 @@ export default function Verses() {
       <div className="container">
         <div className="select">
           <select value={selectedSureId} onChange={e => setSelectedSureId(e.target.value)}>
-            <option key="0">Bir sure seçin..</option>
+            <option key="0">Okumak için bir sûre seçin..</option>
             <>
               {surahs && surahs.data.map((sure) => (
                 <option key={sure.id} value={sure.id}>{sure.name}</option>
