@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { useLoaderData } from "react-router"
 import Paper from '@mui/material/Paper';
-import InputBase from '@mui/material/InputBase';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import SearchIcon from '@mui/icons-material/Search';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
+
+
+import Divider from '@mui/material/Divider';
+import Typography from '@mui/material/Typography';
 
 export default function Verses() {
   const surahs = useLoaderData();
@@ -63,140 +63,97 @@ export default function Verses() {
       </div>
       {verses && verses.data.verses.map((ayet) => (
         <>
-          <div className="w-full max-w-md p-4 bg-gray-200 border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-            <div className="flex items-center justify-between mb-4">
-              <h4 className="text-xl font-bold leading-none text-gray-900 dark:text-white">{`(${selectedSureId}:${selectedSureVerseCount}) ${selectedSureName} Sûresi`}</h4>
+          <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 20 }}>
+            {`(${selectedSureId}:${selectedSureVerseCount}) ${selectedSureName} Sûresi`}
+          </Typography>
+
+          {verses.data.zero !== null &&
+            <div style={{ display: (selectedSureId > 1 && ayet.verse_number == 1 ? 'block' : 'none'), marginTop: 20 }}>
+              <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 20 }}>
+                {`${verses.data.zero.verse}`}
+              </Typography>
+              <Divider />
+              <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
+                {`${verses.data.zero.transcription}`}
+              </Typography>
+              <Divider />
+              <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
+                {`${verses.data.zero.translation.text}`}
+              </Typography>
             </div>
-            <div className="flow-root">
+          }
 
-              <div className="divide-y divide-gray-200 dark:divide-gray-700">
-                {verses.data.zero !== null &&
-                  <div style={{ display: (selectedSureId > 1 && ayet.verse_number == 1 ? 'block' : 'none'), marginTop: 20 }}>
-                    <div className="py-3 sm:py-4 ">
-                      <div className="flex items-center">
-                        <div className="flex-1 min-w-0 ms-4">
-                          <h5 style={{ fontSize: 18 }} className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                            {`${verses.data.zero.verse}`}
-                          </h5>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="py-3 sm:py-4">
-                      <div className="flex items-center">
-                        <div className="flex-1 min-w-0 ms-4">
-                          <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                            {`${verses.data.zero.transcription}`}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="py-3 sm:py-4">
-                      <div className="flex items-center">
-                        <div className="flex-1 min-w-0 ms-4">
-                          <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                            {`${verses.data.zero.translation.text}`}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                }
-                <div className="py-3 sm:py-4">
-                  <div className="flex items-center">
-                    <div className="flex-1 min-w-0 ms-4">
-                      <p className="text-sm font-xlarge text-gray-900 truncate dark:text-white">
-                        <h4 className="text-xl font-bold leading-none text-gray-900 dark:text-white">{`${ayet.verse} (${selectedSureId}:${ayet.verse_number})`}</h4>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="py-3 sm:py-4">
-                  <div className="flex items-center">
-                    <div className="flex-1 min-w-0 ms-4">
-                      <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                        {`(${selectedSureId}:${ayet.verse_number}) ${ayet.transcription}`}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+          <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 20 }}>
+            {`${ayet.verse} (${selectedSureId}:${ayet.verse_number})`}
+          </Typography>
+          <Divider />
+          <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
+            {`(${selectedSureId}:${ayet.verse_number}) ${ayet.transcription}`}
+          </Typography>
+          <Divider />
+          <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
+            {`(${selectedSureId}:${ayet.verse_number}) ${ayet.translation.text}`}
+          </Typography>
 
-                <div className="py-3 sm:py-4">
-                  <div className="flex items-center">
-                    <div className="flex-1 min-w-0 ms-4">
-                      <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                        {`(${selectedSureId}:${ayet.verse_number}) ${ayet.translation.text}`}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="py-3 sm:py-4">
-                  <div className="flex items-center">
-                    <div className="flex-1 min-w-0 ms-4">
-                      <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                        <div style={{ display: (ayet.translation.footnotes !== null ? 'block' : 'none') }}>
-                          <div className="verses-footnotes">
-                            {
-                              ayet.translation.footnotes !== null &&
-                              ayet.translation.footnotes.map(footnotes => (
-                                <p key={footnotes.id}>{`[${footnotes.number}] ${footnotes.text}`}</p>
-                              ))
-                            }
-                          </div>
-                        </div>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <Box sx={{ flexGrow: 1 }} style={{ paddingBottom: 15 }}>
-                  <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                    <Grid size={3}>
-                      <Item>
-                        Sure
-                      </Item>
-                    </Grid>
-                    <Grid size={3}>
-                      <Item>
-                        Ayet
-                      </Item>
-                    </Grid>
-                    <Grid size={3}>
-                      <Item>
-                        Sayfa
-                      </Item>
-                    </Grid>
-                    <Grid size={3}>
-                      <Item>
-                        Cüz
-                      </Item>
-                    </Grid>
-                    <Grid size={3}>
-                      <Item>
-                        {ayet.surah_id}
-                      </Item>
-                    </Grid>
-                    <Grid size={3}>
-                      <Item>
-                        {ayet.verse_number}
-                      </Item>
-                    </Grid>
-                    <Grid size={3}>
-                      <Item>
-                        {`${ayet.page}:${ayet.id}`}
-                      </Item>
-                    </Grid>
-                    <Grid size={3}>
-                      <Item>
-                        {ayet.juz_number}
-                      </Item>
-                    </Grid>
-                  </Grid>
-                </Box>
-
-              </div>
+          <div style={{ display: (ayet.translation.footnotes !== null ? 'block' : 'none') }}>
+            <div className="verses-footnotes">
+              {
+                ayet.translation.footnotes !== null &&
+                ayet.translation.footnotes.map(footnotes => (
+                  <p key={footnotes.id}>
+                    <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
+                      {`[${footnotes.number}] ${footnotes.text}`}
+                    </Typography>
+                  </p>
+                ))
+              }
             </div>
           </div>
+
+          <Box sx={{ flexGrow: 1 }} style={{ paddingBottom: 15, paddingTop: 15 }}>
+            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+              <Grid size={3}>
+                <Item>
+                  Sure
+                </Item>
+              </Grid>
+              <Grid size={3}>
+                <Item>
+                  Ayet
+                </Item>
+              </Grid>
+              <Grid size={3}>
+                <Item>
+                  Sayfa
+                </Item>
+              </Grid>
+              <Grid size={3}>
+                <Item>
+                  Cüz
+                </Item>
+              </Grid>
+              <Grid size={3}>
+                <Item>
+                  {ayet.surah_id}
+                </Item>
+              </Grid>
+              <Grid size={3}>
+                <Item>
+                  {ayet.verse_number}
+                </Item>
+              </Grid>
+              <Grid size={3}>
+                <Item>
+                  {`${ayet.page}:${ayet.id}`}
+                </Item>
+              </Grid>
+              <Grid size={3}>
+                <Item>
+                  {ayet.juz_number}
+                </Item>
+              </Grid>
+            </Grid>
+          </Box>
         </>
       ))
       }
