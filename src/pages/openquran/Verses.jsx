@@ -183,7 +183,7 @@ export default function Verses() {
                     </Grid>
                     <Grid size={3}>
                       <Item>
-                        {ayet.page}
+                        {`${ayet.page}:${ayet.id}`}
                       </Item>
                     </Grid>
                     <Grid size={3}>
