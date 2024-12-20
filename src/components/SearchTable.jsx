@@ -1,4 +1,11 @@
 import { useEffect, useState } from "react";
+import Paper from '@mui/material/Paper';
+import InputBase from '@mui/material/InputBase';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
+import DirectionsIcon from '@mui/icons-material/Directions';
 
 const API_URL = `https://api.acikkuran.com/surah/`;
 
@@ -79,21 +86,24 @@ export default function SearchTable(surahs) {
 
   return (
     <div>
-      <p>
-        <input
-          type="text"
-          placeholder="ara arabic yada text"
+
+      <Paper component="form" sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 325 }}>
+        <InputBase
+          sx={{ ml: 1, flex: 1 }}
           value={searchTerm}
           onChange={(e) => {
             setSearchTerm(e.target.value);
             setFilteredData(null);
             setCount(null)
           }}
-          className="mb-4 p-2 border border-gray-300 rounded"
+          placeholder="ara arabic yada text"
+          inputProps={{ 'aria-label': 'ara arabic yada text' }}
         />
-        &nbsp;
-        <button onClick={handleFilteredData}>Ara</button>
-      </p>
+        <IconButton type="button" sx={{ p: '10px' }} aria-label="search" onClick={handleFilteredData}>
+          <SearchIcon />
+        </IconButton>
+      </Paper>
+
       <div style={{ paddingBottom: 20, display: count !== null ? "block" : "none" }}>
         <p >
           arama sonucu {count}

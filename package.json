@@ -16,7 +16,7 @@
     "@fontsource/roboto": "^5.1.0",
     "@material-tailwind/react": "^2.1.10",
     "@mui/icons-material": "^6.2.0",
-    "@mui/material": "^6.2.0",
+    "@mui/material": "^6.2.1",
     "@mui/styled-engine-sc": "^6.2.0",
     "axios": "^1.7.9",
     "flowbite": "^2.5.2",
