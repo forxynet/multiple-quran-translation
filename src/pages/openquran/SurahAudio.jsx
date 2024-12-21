@@ -12,6 +12,8 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid2';
 
+import PlayerSlider from "./PlayerSlider";
+
 //import AudioPlayer from 'material-ui-audio-player';
 
 export async function loader() {
@@ -45,7 +47,7 @@ export default function SurahAudio() {
         <Grid container spacing={2}>
           <Grid size={5}>
             <Paper style={{ maxHeight: 500, overflow: 'auto' }}>
-              <List sx={{ width: '100%', maxWidth: 450, bgcolor: 'background.paper' }}>
+              <List sx={{ width: '100%', maxWidth: 650, bgcolor: 'background.paper' }}>
                 {surahs.data.map((sure) => (
                   <>
                     <ListItem alignItems="flex-start">
@@ -74,7 +76,7 @@ export default function SurahAudio() {
             </Paper>
           </Grid>
           <Grid size={7}>
-            Player area
+            <PlayerSlider />
           </Grid>
         </Grid>
       </Box>
