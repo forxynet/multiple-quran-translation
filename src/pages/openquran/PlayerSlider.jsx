@@ -12,12 +12,10 @@ import FastRewindRounded from '@mui/icons-material/FastRewindRounded';
 import VolumeUpRounded from '@mui/icons-material/VolumeUpRounded';
 import VolumeDownRounded from '@mui/icons-material/VolumeDownRounded';
 
-
-
 const Widget = styled('div')(({ theme }) => ({
-  padding: 16,
+  padding: 5,
   borderRadius: 16,
-  width: 343,
+  width: 250,
   maxWidth: '100%',
   margin: 'auto',
   position: 'relative',
@@ -29,8 +27,6 @@ const Widget = styled('div')(({ theme }) => ({
   }),
 }));
 
-
-
 const TinyText = styled(Typography)({
   fontSize: '0.75rem',
   opacity: 0.38,
@@ -40,7 +36,7 @@ const TinyText = styled(Typography)({
 
 export default function PlayerSlider({ lang, name, url }) {
   const duration = 200; // seconds
-  const [position, setPosition] = React.useState(32);
+  const [position, setPosition] = React.useState(0);
   const [paused, setPaused] = React.useState(false);
   function formatDuration(value) {
     const minute = Math.floor(value / 60);
@@ -48,9 +44,9 @@ export default function PlayerSlider({ lang, name, url }) {
     return `${minute}:${secondLeft < 10 ? `0${secondLeft}` : secondLeft}`;
   }
   return (
-    <Box sx={{ width: '100%', overflow: 'hidden', position: 'relative', p: 3 }}>
+    <Box sx={{ width: '100%', overflow: 'hidden', position: 'relative', p: 0 }}>
       <Widget>
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+        <Box sx={{ display: 'flex', alignItems: 'left' }}>
           <Box sx={{ ml: 1.5, minWidth: 0 }}>
             <Typography variant="caption" sx={{ color: 'text.secondary', fontWeight: 500 }}>
               {name}
@@ -140,7 +136,7 @@ export default function PlayerSlider({ lang, name, url }) {
           </IconButton>
         </Box>
         <Stack
-          spacing={2}
+          spacing={1}
           direction="row"
           sx={(theme) => ({
             mb: 1,
@@ -156,7 +152,7 @@ export default function PlayerSlider({ lang, name, url }) {
           <VolumeDownRounded />
           <Slider
             aria-label="Volume"
-            defaultValue={30}
+            defaultValue={0}
             sx={(t) => ({
               color: 'rgba(0,0,0,0.87)',
               '& .MuiSlider-track': {

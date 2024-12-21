@@ -27,7 +27,6 @@ export async function loader() {
 
 export default function SurahAudio() {
   const surahs = useLoaderData();
-
   const [sureId, setSureId] = useState(null)
 
   const handleChange = (event) => {
@@ -35,10 +34,7 @@ export default function SurahAudio() {
     setSureId(event.target.value);
   };
 
-  console.log(surahs.data);
-
-
-
+  //console.log(surahs.data);
 
   return (
     <div className='chapters'>
