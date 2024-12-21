@@ -56,7 +56,7 @@ export default function PlayerSlider({ lang, name, url }) {
             </Typography>
           </Box>
         </Box>
-        <Slider
+        {/* <Slider
           aria-label="time-indicator"
           size="small"
           value={position}
@@ -92,8 +92,8 @@ export default function PlayerSlider({ lang, name, url }) {
               color: '#fff',
             }),
           })}
-        />
-        <Box
+        /> */}
+        {/* <Box
           sx={{
             display: 'flex',
             alignItems: 'center',
@@ -103,7 +103,7 @@ export default function PlayerSlider({ lang, name, url }) {
         >
           <TinyText>{formatDuration(position)}</TinyText>
           <TinyText>-{formatDuration(duration - position)}</TinyText>
-        </Box>
+        </Box> */}
         <Box
           sx={(theme) => ({
             display: 'flex',
@@ -149,7 +149,7 @@ export default function PlayerSlider({ lang, name, url }) {
             },
           })}
           alignItems="center">
-          <VolumeDownRounded />
+          {/* <VolumeDownRounded />
           <Slider
             aria-label="Volume"
             defaultValue={0}
@@ -174,7 +174,7 @@ export default function PlayerSlider({ lang, name, url }) {
               }),
             })}
           />
-          <VolumeUpRounded />
+          <VolumeUpRounded /> */}
         </Stack>
       </Widget>
     </Box>
