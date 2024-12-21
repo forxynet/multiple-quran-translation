@@ -96,6 +96,9 @@ export default function Verses() {
                       {`${verses.data.zero.translation.text}`}
                     </Typography>
 
+                    <div style={{ paddingBottom: 15, paddingTop: 15 }}>
+                      <Divider />
+                    </div>
                   </div>
                 }
 
