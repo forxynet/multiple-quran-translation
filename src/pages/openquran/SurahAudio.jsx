@@ -17,8 +17,8 @@ export default function SurahAudio() {
   //console.log(surahs)
   return (
     <div className='chapters'>
-      <Paper style={{ maxHeight: 500, overflow: 'auto' }}>
-        <List sx={{ width: '100%', maxWidth: 650, bgcolor: 'background.paper' }}>
+      <Paper style={{ overflow: 'auto' }}>
+        <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
           {surahs.data.map((sure) => (
             <>
               <ListItem alignItems="flex-start" >
