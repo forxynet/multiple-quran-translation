@@ -11,8 +11,13 @@ export default function AccordionPlay(surahs) {
   const [expanded, setExpanded] = useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
-    console.log(panel)
     setExpanded(isExpanded ? panel : false);
+
+    const allAudios = document.querySelectorAll('audio');
+    allAudios.forEach(audioEl => {
+      audioEl.pause()
+      audioEl.currentTime = 0;
+    })
   };
 
   return (
