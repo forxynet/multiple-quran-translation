@@ -16,24 +16,40 @@ import NotFound from './pages/NotFound';
 import Chapters, { chaptersLoader } from './pages/chapters/Chapters'
 import Editions, { editionsDetailsLoader } from './pages/chapters/Editions'
 import ChaptersError from './pages/chapters/ChaptersError'
-import SurahAudio, {loader} from './pages/openquran/SurahAudio';
-import Verses, {loaderVerses} from './pages/openquran/Verses';
-import SearchVerses, {loaderSurahs} from "./pages/openquran/SearchVerses";
+import SurahAudio, { loader } from './pages/openquran/SurahAudio';
+import Verses, { loaderVerses } from './pages/openquran/Verses';
+import SearchVerses, { loaderSurahs } from "./pages/openquran/SearchVerses";
+
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+
+const darkTheme = createTheme({
+  palette: {
+    palette: {
+      primary: {
+        main: '#666',
+      },
+      secondary: {
+        main: '#edf2ff',
+      },
+    },
+  },
+});
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       {/* <Route index element={<Home />} />
       <Route path="about" element={<About />} /> */}
-    
+
       <Route path="SearchVerses" element={<SearchVerses />} loader={loaderSurahs} />
       <Route path="Verses" element={<Verses />} loader={loader} />
       <Route path="Surahs" element={<SurahAudio />} loader={loaderVerses} />
       <Route path="chapters" element={<ChaptersLayout />} errorElement={ChaptersError}>
         <Route
-          index          
+          index
           element={<Chapters />}
-          loader={chaptersLoader}          
+          loader={chaptersLoader}
         />
         <Route
           path='/chapters/editions/:id'
@@ -47,7 +63,10 @@ const router = createBrowserRouter(
 );
 function App() {
   return (
-    <RouterProvider router={router} />
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <RouterProvider router={router} />
+    </ThemeProvider>
   )
 }
 

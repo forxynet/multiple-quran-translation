@@ -1,7 +1,8 @@
 import { useLoaderData } from "react-router"
 import { useState, useRef } from 'react';
 //import AudioPlayer from 'react-h5-audio-player';
-import Buttons from "../../components/Buttons";
+//import Buttons from "../../components/Buttons";
+//import MenuPlay from "../../components/MenuPlay";
 
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -11,6 +12,8 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 
+import AccordionPlay from "../../components/AccordionPlay";
+
 export default function SurahAudio() {
   const surahs = useLoaderData();
 
@@ -18,39 +21,7 @@ export default function SurahAudio() {
   return (
     <div className='chapters'>
       <Paper style={{ maxHeight: 500, overflow: 'auto', padding: 10 }}>
-        <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-          {surahs.data.map((sure) => (
-            <>
-              {sure.id > 1 && <Divider variant="inset" component="li" />}
-              <ListItem alignItems="flex-start" >
-                <ListItemAvatar>
-                  {sure.verse_count}
-                </ListItemAvatar>
-                <ListItemText value={sure.id}
-                  primary={sure.name_original}
-                  secondary={
-                    <>
-                      <Typography
-                        component="span"
-                        variant="body2"
-                        sx={{ color: 'text.primary', display: 'inline' }}
-                      >
-                        {sure.name}
-                      </Typography>
-
-                      {/* src={sure.audio.mp3} */}
-
-                      <Buttons name={`TR-${sure.name}`} url={sure.audio.mp3} id={sure.id} />
-                      <Buttons name={`EN-${sure.name}`} url={sure.audio.mp3_en} id={sure.id} />
-
-                    </>
-                  }
-                />
-              </ListItem >
-
-            </>
-          ))}
-        </List>
+        <AccordionPlay surahs={surahs} />
       </Paper>
     </div>
   )

@@ -1,6 +1,8 @@
 import { Outlet, NavLink } from 'react-router-dom';
 //import Breadcrumps from '../components/Breadcrumbs';
 
+
+
 export default function RootLayout() {
   return (
     <div className="root-layout">
@@ -8,10 +10,10 @@ export default function RootLayout() {
         <nav>
           <div>
             <div>
-              <h1>Kuran Tercümesi</h1>
-              <NavLink to="searchverses">Ayetleri Ara</NavLink>
-              <NavLink to="verses">Sûre Oku</NavLink>
-              <NavLink to="surahs">Sûre Dinle</NavLink>
+              <h1 className='dark:text-white' >Kuran Tercümesi</h1>
+              <NavLink className='dark:text-white' to="searchverses" >Ayetleri Ara</NavLink>
+              <NavLink className='dark:text-white' to="verses">Sûre Oku</NavLink>
+              <NavLink className='dark:text-white' to="surahs">Sûre Dinle</NavLink>
             </div>
           </div>
         </nav>
