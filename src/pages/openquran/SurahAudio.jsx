@@ -17,10 +17,11 @@ export default function SurahAudio() {
   //console.log(surahs)
   return (
     <div className='chapters'>
-      <Paper style={{ overflow: 'auto' }}>
+      <Paper style={{ maxHeight: 500, overflow: 'auto', padding: 10 }}>
         <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
           {surahs.data.map((sure) => (
             <>
+              {sure.id > 1 && <Divider variant="inset" component="li" />}
               <ListItem alignItems="flex-start" >
                 <ListItemAvatar>
                   {sure.verse_count}
@@ -46,7 +47,7 @@ export default function SurahAudio() {
                   }
                 />
               </ListItem >
-              <Divider variant="inset" component="li" />
+
             </>
           ))}
         </List>
