@@ -4,12 +4,9 @@ import SearchTable from "../../components/SearchTable";
 export default function SearchVerses() {
   const verses = useLoaderData();
 
-  //console.log(verses);
-
   return (
     <div>
       <SearchTable surah={verses.data} />
-     
     </div>
   )
 }

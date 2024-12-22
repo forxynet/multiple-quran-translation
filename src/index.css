@@ -332,7 +332,7 @@ select::-ms-expand {
   position: relative;
   display: flex;
   width: 20em;
-  height: 3em;
+  height: 2em;
   border-radius: 0.25em;
   overflow: hidden;
 }
@@ -342,7 +342,7 @@ select::-ms-expand {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 1em;
+  padding: 0.4em;
   background-color: #3ef54a;
   transition: 0.25s all ease;
   pointer-events: none;

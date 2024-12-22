@@ -9,9 +9,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
 import Typography from '@mui/material/Typography';
 
-const API_URL = `https://api.acikkuran.com/surah/`;
-
-export default function SearchTable(surahs) {
+export default function SearchTable({ surahs }) {
   const [searchTerm, setSearchTerm] = useState();
   const [loading, setLoading] = useState(true);
   const [verses, setVerses] = useState([]);
@@ -29,15 +27,13 @@ export default function SearchTable(surahs) {
         } else {
           if (key === "id") {
             let id = obj[key];
-            fetch(API_URL + id)
-              .then((res) => {
-                return res.json();
-              })
-              .then((surah) => {
-                if (AyetArray.length <= 114) {
-                  AyetArray.push(surah.data.verses);
-                }
-              });
+            fetch('https://api.acikkuran.com/surah/' + id).then((res) => {
+              return res.json();
+            }).then((surah) => {
+              if (AyetArray.length <= 114) {
+                AyetArray.push(surah.data.verses);
+              }
+            });
           }
         }
       }
@@ -64,6 +60,7 @@ export default function SearchTable(surahs) {
     const result = await filteredArray.filter((o) =>
       Object.values(o).some((v) => v !== null)
     );
+
     filteredResultData.push(result);
 
     setCount(result.length);
@@ -162,6 +159,7 @@ export default function SearchTable(surahs) {
                           <div style={{ paddingBottom: 15 }}>
                             <Divider />
                           </div>
+
                           <Box sx={{ flexGrow: 1 }} style={{ paddingBottom: 15 }}>
                             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                               <Grid size={3}>

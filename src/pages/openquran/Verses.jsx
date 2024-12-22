@@ -22,7 +22,7 @@ export default function Verses() {
           throw new Error(`HTTP error: Status ${response.status}`);
         }
         const data = await response.json();
-        //console.log(verses.data.name)
+
         setVerses(data);
         setSelectedSureName(data.data.name);
         setSelectedSureVerseCount(data.data.verse_count);
@@ -48,7 +48,7 @@ export default function Verses() {
     <>
       <div className="container">
         <div className="select">
-          <select value={selectedSureId} onChange={e => { setSelectedSureId(e.target.value) }}>
+          <select key={selectedSureId} value={selectedSureId} onChange={e => setSelectedSureId(e.target.value)}>
             <>
               <option key="0">Bir sûre seçiniz...</option>
               {surahs && surahs.data.map((sure) => (
@@ -69,9 +69,11 @@ export default function Verses() {
                     <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 17, textAlign: 'center' }}>
                       {`(${selectedSureId}:${selectedSureVerseCount}) ${selectedSureName} Sûresi`}
                     </Typography>
+
                     <div style={{ paddingBottom: 15, paddingTop: 15 }}>
                       <Divider />
                     </div>
+
                   </>
                 }
                 {verses.data.zero !== null &&
@@ -80,6 +82,7 @@ export default function Verses() {
                     <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 17, textAlign: 'center' }}>
                       {`(${selectedSureId}:${selectedSureVerseCount}) ${selectedSureName} Sûresi`}
                     </Typography>
+
                     <div style={{ paddingBottom: 15, paddingTop: 15 }}>
                       <Divider />
                     </div>
@@ -99,6 +102,7 @@ export default function Verses() {
                     <div style={{ paddingBottom: 15, paddingTop: 15 }}>
                       <Divider />
                     </div>
+
                   </div>
                 }
 
