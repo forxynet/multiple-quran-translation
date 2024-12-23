@@ -112,7 +112,11 @@ export default function SearchTable({ surahs }) {
       <div style={{ display: count !== null ? "block" : "none" }}>
         <p>
           <Root>
-            <Divider>{`( arama sonucu ${count} )`}</Divider>
+            <Divider>
+              <Typography variant="label" color="common.white">
+                {`( arama sonucu ${count} )`}
+              </Typography>
+            </Divider>
           </Root>
         </p>
         <div style={{ display: count > 0 ? "block" : "none" }}>
