@@ -114,7 +114,7 @@ export default function SearchTable({ surahs }) {
           <Root>
             <Divider>
               <Typography variant="label" color="common.white">
-                {`( arama sonucu ${count} )`}
+                {` Aramanızda ${count} Ayet bulundu.`}
               </Typography>
             </Divider>
           </Root>
