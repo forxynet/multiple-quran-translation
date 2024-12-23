@@ -13,7 +13,7 @@ export default function RootLayout() {
             <div>
               <h1>
                 <Typography variant="label" color="common.white">
-                  Kuran Tercümesi
+                  Kuran Tercümesi - Uymak için gereği gibi oku
                 </Typography>
               </h1>
               <NavLink className='palette.text.primary' to="searchverses" >
