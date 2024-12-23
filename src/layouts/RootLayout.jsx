@@ -14,9 +14,9 @@ export default function RootLayout() {
               <h1>
                 <Typography variant="label" color="common.white">
                   Kuran Tercümesi
-                  <p>
+                  <p style={{ fontSize: '12pt', marginTop: -10, marginBottom: 15 }}>
                     <Typography variant="label" color="common.white">
-                      Uymak için gereği gibi oku
+                      Ona uymak için gereği gibi oku
                     </Typography>
                   </p>
                 </Typography>
