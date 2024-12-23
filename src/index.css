@@ -1,3 +1,4 @@
+@import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 @tailwind base;
@@ -448,4 +449,25 @@ select::-ms-expand {
   .footer {
     order: 4;
   }
+}
+
+.videoLangTr::before {
+  content: "TR";   
+  top: 0;
+  right: 0;
+  padding: 0.4em;
+  transition: 0.25s all ease;
+  pointer-events: none;
+}
+.videoLangEn::before {
+  content: "EN";
+  top: 0;
+  right: 0;
+  padding: 0.5em;
+  transition: 0.25s all ease;
+  pointer-events: none;
+  -webkit-transition: 0.25s all ease;
+  -moz-transition: 0.25s all ease;
+  -ms-transition: 0.25s all ease;
+  -o-transition: 0.25s all ease;
 }

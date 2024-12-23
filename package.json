@@ -19,6 +19,7 @@
     "@mui/icons-material": "^6.2.0",
     "@mui/material": "^6.2.1",
     "@mui/styled-engine-sc": "^6.2.0",
+    "font-awesome": "^4.7.0",
     "react": "^18.3.1",
     "react-audio-player": "^0.17.0",
     "react-dom": "^18.3.1",

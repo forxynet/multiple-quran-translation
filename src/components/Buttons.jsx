@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 
-export default function Buttons({ name, url, id }) {
-
+export default function Buttons({ video_button, name, url, id }) {
+  const [play, setPlay] = useState(true);
+  const [selectedVideoId, setSelectedVideoId] = useState();
   // pass the event to the handler
   const handlePlay = e => {
     const allAudios = document.querySelectorAll('audio');
@@ -12,15 +14,21 @@ export default function Buttons({ name, url, id }) {
 
     // get the clicked audio element and play
     const thisAudio = e.target.querySelector('audio');
-    thisAudio.currentTime = 0;
-    thisAudio.play()
+
+    if (play) {
+      thisAudio.play()
+      setPlay(false);
+    }
+    else {
+      setPlay(true);
+    }
   }
 
   return (
-    <div className="drum-button">
-      <button className='drum-pad' onClick={handlePlay}>{name}
-        <ReactAudioPlayer src={url} />
+    <div className={video_button}>
+      <button className={play ? 'fa fa-play' : 'fa fa-pause'} onClick={handlePlay}>{name}
+        <ReactAudioPlayer id={video_button} src={url} />
       </button>
-    </div>
+    </div >
   )
 }

@@ -3,7 +3,8 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Typography from '@mui/material/Typography';
+import { styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
 import Buttons from './Buttons';
 
 export default function AccordionPlay(surahs) {
@@ -19,6 +20,17 @@ export default function AccordionPlay(surahs) {
     })
   };
 
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+    ...theme.applyStyles('dark', {
+      backgroundColor: '#1A2027',
+    }),
+  }));
+
   return (
     <>
       {
@@ -29,17 +41,17 @@ export default function AccordionPlay(surahs) {
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls={`panel${sure.id}-content`}
                 id={`panel-${sure.id}`}>
-                {`${sure.name} (${sure.name_original})`}
+                {`${sure.name} (${sure.verse_count})`}
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>
-                  <Buttons name={`(TR) ${sure.name} (${sure.verse_count})`} url={sure.audio.mp3} id={sure.id} />
-                </Typography>
-                <Typography>
-                  <Buttons name={`(EN) ${sure.name} (${sure.verse_count})`} url={sure.audio.mp3_en} id={sure.id} />
-                </Typography>
+                <p>
+                  <Buttons video_button={"videoLangTr"} url={sure.audio.mp3} id={sure.id} />
+                </p>
+                <p>
+                  <Buttons video_button={"videoLangEn"} url={sure.audio.mp3_en} id={sure.id} />
+                </p>
               </AccordionDetails>
-            </Accordion>
+            </Accordion >
           </>
         ))
       }
