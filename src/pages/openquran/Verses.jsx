@@ -104,15 +104,17 @@ export default function Verses() {
 
                 <div key={ayet.verse_number} style={{ paddingBottom: 5 }}>
 
-
-
                   <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 17 }}>
                     {`${ayet.verse} (${selectedSureId}:${ayet.verse_number})`}
                   </Typography>
 
+                  <div style={{ paddingBottom: 15, paddingTop: 15 }} />
+
                   <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
                     {`(${selectedSureId}:${ayet.verse_number}) ${ayet.transcription}`}
                   </Typography>
+
+                  <div style={{ paddingBottom: 15, paddingTop: 15 }} />
 
                   <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
                     {`(${selectedSureId}:${ayet.verse_number}) ${ayet.translation.text}`}
