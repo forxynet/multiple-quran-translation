@@ -43,9 +43,11 @@ export default function SearchTable({ surahs }) {
     iteraateObject(surahs);
     setVerses(AyetArray);
     setLoading(false);
+
   }, []);
 
   async function handleFilteredData() {
+    console.log(verses)
     verses.map((data) =>
       filteredArray.push(
         data.filter(

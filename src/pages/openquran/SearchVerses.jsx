@@ -6,7 +6,7 @@ export default function SearchVerses() {
 
   return (
     <div>
-      <SearchTable surah={verses.data} />
+      <SearchTable surahs={verses} />
     </div>
   )
 }

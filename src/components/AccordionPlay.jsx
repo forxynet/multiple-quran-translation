@@ -44,12 +44,14 @@ export default function AccordionPlay(surahs) {
                 {`${sure.name} (${sure.verse_count})`}
               </AccordionSummary>
               <AccordionDetails>
-                <p>
-                  <Buttons video_button={"videoLangTr"} url={sure.audio.mp3} id={sure.id} />
-                </p>
-                <p>
-                  <Buttons video_button={"videoLangEn"} url={sure.audio.mp3_en} id={sure.id} />
-                </p>
+                <div className='flex-container'>
+                  <div>
+                    <Buttons video_button={"videoLangTr"} url={sure.audio.mp3} id={sure.id} />
+                  </div>
+                  <div>
+                    <Buttons video_button={"videoLangEn"} url={sure.audio.mp3_en} id={sure.id} />
+                  </div>
+                </div>
               </AccordionDetails>
             </Accordion >
           </>
