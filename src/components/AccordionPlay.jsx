@@ -3,12 +3,11 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { styled } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
 import Buttons from './Buttons';
 
-export default function AccordionPlay(surahs) {
+export default function AccordionPlay({ surahs }) {
   const [expanded, setExpanded] = useState(false);
+
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
@@ -18,23 +17,14 @@ export default function AccordionPlay(surahs) {
       audioEl.pause()
       audioEl.currentTime = 0;
     })
-  };
 
-  const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-    ...theme.applyStyles('dark', {
-      backgroundColor: '#1A2027',
-    }),
-  }));
+    console.log(surahs)
+  };
 
   return (
     <>
       {
-        surahs && surahs.surahs.data.map(sure => (
+        surahs && surahs.data.map(sure => (
           <>
             <Accordion key={sure.id} expanded={expanded === `panel-${sure.id}`} onChange={handleChange(`panel-${sure.id}`)}>
               <AccordionSummary

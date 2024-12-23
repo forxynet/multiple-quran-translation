@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 
-export default function Buttons({ video_button, name, url, id }) {
+export default function Buttons({ video_button, name, url }) {
   const [play, setPlay] = useState(true);
-  const [selectedVideoId, setSelectedVideoId] = useState();
+
   // pass the event to the handler
   const handlePlay = e => {
     const allAudios = document.querySelectorAll('audio');
