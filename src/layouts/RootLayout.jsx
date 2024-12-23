@@ -1,4 +1,5 @@
 import { Outlet, NavLink } from 'react-router-dom';
+import Typography from '@mui/material/Typography';
 //import Breadcrumps from '../components/Breadcrumbs';
 
 
@@ -10,10 +11,26 @@ export default function RootLayout() {
         <nav>
           <div>
             <div>
-              <h1 className='dark:text-white' >Kuran Tercümesi</h1>
-              <NavLink className='dark:text-white' to="searchverses" >Ayetleri Ara</NavLink>
-              <NavLink className='dark:text-white' to="verses">Sûre Oku</NavLink>
-              <NavLink className='dark:text-white' to="surahs">Sûre Dinle</NavLink>
+              <h1>
+                <Typography variant="label" color="common.white">
+                  Kuran Tercümesi
+                </Typography>
+              </h1>
+              <NavLink className='palette.text.primary' to="searchverses" >
+                <Typography variant="label" color="common.white">
+                  Ayetleri Ara
+                </Typography>
+              </NavLink>
+              <NavLink className='palette.text.primary' to="verses">
+                <Typography variant="label" color="common.white">
+                  Sûre Oku
+                </Typography>
+              </NavLink>
+              <NavLink className='palette.text.primary' to="surahs">
+                <Typography variant="label" color="common.white">
+                  Sûre Dinle
+                </Typography>
+              </NavLink>
             </div>
           </div>
         </nav>

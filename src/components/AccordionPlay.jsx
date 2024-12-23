@@ -4,6 +4,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Buttons from './Buttons';
+import Typography from '@mui/material/Typography';
 
 export default function AccordionPlay({ surahs }) {
   const [expanded, setExpanded] = useState(false);
@@ -31,7 +32,9 @@ export default function AccordionPlay({ surahs }) {
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls={`panel${sure.id}-content`}
                 id={`panel-${sure.id}`}>
-                {`${sure.name} (${sure.verse_count})`}
+                <Typography variant="label" color="common.white">
+                  {`${sure.name} (${sure.verse_count})`}
+                </Typography>
               </AccordionSummary>
               <AccordionDetails>
                 <div className='flex-container'>
