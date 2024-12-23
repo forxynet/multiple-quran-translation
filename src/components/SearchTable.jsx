@@ -153,7 +153,7 @@ export default function SearchTable({ surahs }) {
                                   ayet.translation.footnotes.map(footnotes => (
                                     <p key={footnotes.id}>
                                       <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 15 }}>
-                                        {`[${footnotes.number}] ${(ayet.surah_id === 4 && ayet.verse_number === 103 && footnotes.number === 2) ? `${footnotes.text} ("Namaz" Asr-ı saadetten günümüze kadar da, Allah Rasulü Muhammed'in gösterdiği gibi beş vakit olarak kılınmıştır. Diğer taraftan, namazla ilgili Kur’an ayetleri ve hadisler bir bütün olarak ele alındığında, namazın beş vakit olduğu açıkça anlaşılır (Bkz. Bakara 2/238; İsra 17/78; Rum 30/17-18; Buhari, Mevakit, 1, Tirmizi, Salat, 1).)` : footnotes.text}`}
+                                        {`[${footnotes.number}] ${(ayet.surah_id === 4 && ayet.verse_number === 103 && footnotes.number === 2) ? `${footnotes.text} ("Namaz" Asr-ı saadetten günümüze kadar da, Allah Rasulü'nün gösterdiği gibi beş vakit olarak kılınmıştır. Diğer taraftan, namazla ilgili Kur’an ayetleri ve hadisler bir bütün olarak ele alındığında, namazın beş vakit olduğu açıkça anlaşılır (Bkz. Bakara 2/238; İsra 17/78; Rum 30/17-18; Buhari, Mevakit, 1, Tirmizi, Salat, 1).)` : footnotes.text}`}
                                       </Typography>
                                     </p>
                                   ))
