@@ -40,7 +40,7 @@ export default function Verses() {
     textAlign: 'center',
     color: theme.palette.text.secondary,
     ...theme.applyStyles('dark', {
-      backgroundColor: '#f7f7f6',
+      backgroundColor: '#1A2027',
     }),
   }));
 

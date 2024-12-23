@@ -27,10 +27,10 @@ const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#FFFFFF',
+      main: '#FFF',
     },
     text: {
-      primary: "#FFFFFF"
+      primary: "#FFF"
     }
   },
 });
