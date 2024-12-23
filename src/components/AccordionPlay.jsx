@@ -9,7 +9,6 @@ import Typography from '@mui/material/Typography';
 export default function AccordionPlay({ surahs }) {
   const [expanded, setExpanded] = useState(false);
 
-
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
 
@@ -18,8 +17,6 @@ export default function AccordionPlay({ surahs }) {
       audioEl.pause()
       audioEl.currentTime = 0;
     })
-
-    console.log(surahs)
   };
 
   return (

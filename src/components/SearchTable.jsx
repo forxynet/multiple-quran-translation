@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import Divider from '@mui/material/Divider';
@@ -47,7 +48,6 @@ export default function SearchTable({ surahs }) {
   }, []);
 
   async function handleFilteredData() {
-    console.log(verses)
     verses.map((data) =>
       filteredArray.push(
         data.filter(

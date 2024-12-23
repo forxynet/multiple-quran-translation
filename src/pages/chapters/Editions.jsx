@@ -4,12 +4,12 @@ import { editionsTr } from '../../data/editions/tr'
 export default function Editions() {
   const edition = useLoaderData()
 
-  
+
   return (
     <div className='chapters-details'>
       {
         edition.map((data, index) => (
-          
+
           <p key={index}>{`[${data.verse}] ${data.text}.`}</p>
         ))
       }
@@ -27,6 +27,5 @@ export const editionsDetailsLoader = async ({ params }) => {
     detailData = value[id];
   });
 
-  //console.log(detailData)
   return detailData;
 }
