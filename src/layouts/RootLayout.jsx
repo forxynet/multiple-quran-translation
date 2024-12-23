@@ -16,7 +16,7 @@ export default function RootLayout() {
                   Kuran Tercümesi
                   <p>
                     <Typography variant="label" color="common.white">
-                      Ona uymak için gereği gibi oku
+                      Uymak için gereği gibi oku
                     </Typography>
                   </p>
                 </Typography>
