@@ -127,10 +127,8 @@ export default function Verses() {
                         ayet.translation.footnotes.map(footnotes => (
                           <p key={footnotes.id}>
                             <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
-                              {`[${footnotes.number}] 
-                                 (
-                                 ${(
-                                  (ayet.surah_id === 2 && ayet.verse_number === 43 && footnotes.number === 1) ||
+                              {`[${footnotes.number}]
+                                 ${(ayet.surah_id === 2 && ayet.verse_number === 43 && footnotes.number === 1) ||
                                   (ayet.surah_id === 2 && ayet.verse_number === 45 && footnotes.number === 2) ||
                                   (ayet.surah_id === 2 && ayet.verse_number === 238 && footnotes.number === 1) ||
                                   (ayet.surah_id === 2 && ayet.verse_number === 238 && footnotes.number === 2) ||
@@ -149,7 +147,7 @@ export default function Verses() {
                                   (ayet.surah_id === 62 && ayet.verse_number === 9 && footnotes.number === 3) ||
                                   (ayet.surah_id === 108 && ayet.verse_number === 2 && footnotes.number === 1) ||
                                   (ayet.surah_id === 108 && ayet.verse_number === 2 && footnotes.number === 2)
-                                )
+
                                   ? `${footnotes.text} [ HB - Dipnot ] Bu konuda daha doğru ve detay bilgilere [ https://kuran.diyanet.gov.tr | https://islamansiklopedisi.org.tr/arama ] gibi muteber adreslerden araştırma yaparak ulaşabilirsiniz.` : footnotes.text}`}
                             </Typography>
                           </p>
