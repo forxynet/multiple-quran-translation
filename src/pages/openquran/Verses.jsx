@@ -13,7 +13,6 @@ export default function Verses() {
   const [selectedSureName, setSelectedSureName] = useState(null);
   const [selectedSureVerseCount, setSelectedSureVerseCount] = useState(null);
   const [verses, setVerses] = useState(null);
-  const [checkFootnotes, setCheckFootnotes] = useState(false);
 
   useEffect(() => {
     if (selectedSureId > 0) {
@@ -45,29 +44,6 @@ export default function Verses() {
     }),
   }));
 
-  const CheckFootnotesFunction = (surah_id, verse_number, footnotes_number) => {
-    if (surah_id === 2 && verse_number === 43 && footnotes_number === 1) { setCheckFootnotes(true) }
-    else if (surah_id === 2 && verse_number === 45 && footnotes_number === 2) { setCheckFootnotes(true) }
-    else if (surah_id === 2 && verse_number === 238 && footnotes_number === 1) { setCheckFootnotes(true) }
-    else if (surah_id === 2 && verse_number === 238 && footnotes_number === 2) { setCheckFootnotes(true) }
-    else if (surah_id === 4 && verse_number === 101 && footnotes_number === 3) { setCheckFootnotes(true) }
-    else if (surah_id === 4 && verse_number === 103 && footnotes_number === 2) { setCheckFootnotes(true) }
-    else if (surah_id === 5 && verse_number === 6 && footnotes_number === 2) { setCheckFootnotes(true) }
-    else if (surah_id === 5 && verse_number === 12 && footnotes_number === 1) { setCheckFootnotes(true) }
-    else if (surah_id === 11 && verse_number === 114 && footnotes_number === 1) { setCheckFootnotes(true) }
-    else if (surah_id === 11 && verse_number === 114 && footnotes_number === 2) { setCheckFootnotes(true) }
-    else if (surah_id === 19 && verse_number === 59 && footnotes_number === 1) { setCheckFootnotes(true) }
-    else if (surah_id === 20 && verse_number === 132 && footnotes_number === 1) { setCheckFootnotes(true) }
-    else if (surah_id === 21 && verse_number === 73 && footnotes_number === 1) { setCheckFootnotes(true) }
-    else if (surah_id === 22 && verse_number === 41 && footnotes_number === 1) { setCheckFootnotes(true) }
-    else if (surah_id === 27 && verse_number === 3 && footnotes_number === 1) { setCheckFootnotes(true) }
-    else if (surah_id === 31 && verse_number === 4 && footnotes_number === 1) { setCheckFootnotes(true) }
-    else if (surah_id === 62 && verse_number === 9 && footnotes_number === 3) { setCheckFootnotes(true) }
-    else if (surah_id === 108 && verse_number === 2 && footnotes_number === 1) { setCheckFootnotes(true) }
-    else if (surah_id === 108 && verse_number === 2 && footnotes_number === 2) { setCheckFootnotes(true) }
-    else { setCheckFootnotes(false) }
-  }
-
   return (
     <>
       <div className="container">
@@ -76,7 +52,7 @@ export default function Verses() {
             <>
               <option key="0">Bir sûre seçiniz...</option>
               {surahs && surahs.data.map((sure) => (
-                <option key={sure.id} value={sure.id}>{sure.name}</option>
+                <option key={sure.id} value={sure.id}>{sure.id} - {sure.name}</option>
               ))}
             </>
           </select>
