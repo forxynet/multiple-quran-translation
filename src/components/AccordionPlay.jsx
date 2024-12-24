@@ -30,7 +30,7 @@ export default function AccordionPlay({ surahs }) {
                 aria-controls={`panel${sure.id}-content`}
                 id={`panel-${sure.id}`}>
                 <Typography variant="label" color="common.white">
-                  {`${sure.name} (${sure.verse_count})`}
+                  {`${sure.id} - ${sure.name} (${sure.verse_count})`}
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
