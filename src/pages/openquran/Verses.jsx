@@ -120,7 +120,7 @@ export default function Verses() {
                     {`(${selectedSureId}:${ayet.verse_number}) ${ayet.translation.text}`}
                   </Typography>
 
-                  <div style={{ display: (ayet.translation.footnotes !== null ? 'block' : 'none') }}>
+                  {/* <div style={{ display: (ayet.translation.footnotes !== null ? 'block' : 'none') }}>
                     <div className="verses-footnotes">
                       {
                         ayet.translation.footnotes !== null &&
@@ -154,7 +154,8 @@ export default function Verses() {
                         ))
                       }
                     </div>
-                  </div>
+                  </div> */}
+
                 </div>
 
                 <div style={{ paddingBottom: 15 }}>

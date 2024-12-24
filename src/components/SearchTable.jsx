@@ -149,7 +149,7 @@ export default function SearchTable({ surahs }) {
                             {`(${ayet.surah_id}:${ayet.verse_number}) ${ayet.translation.text}`}
                           </Typography>
 
-                          <div>
+                          {/* <div>
                             <div style={{ display: ayet.translation.footnotes !== null ? "block" : "none" }}>
                               <div className="verses-footnotes">
                                 {
@@ -185,7 +185,7 @@ export default function SearchTable({ surahs }) {
                                 }
                               </div>
                             </div>
-                          </div>
+                          </div> */}
 
                           <div style={{ paddingBottom: 15 }}>
                             <Divider />
