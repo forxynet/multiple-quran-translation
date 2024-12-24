@@ -156,8 +156,31 @@ export default function SearchTable({ surahs }) {
                                   ayet.translation.footnotes !== null &&
                                   ayet.translation.footnotes.map(footnotes => (
                                     <p key={footnotes.id}>
-                                      <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 15 }}>
-                                        {`[${footnotes.number}] ${(ayet.surah_id === 4 && ayet.verse_number === 103 && footnotes.number === 2) ? `${footnotes.text} ("Namaz" Asr-ı saadetten günümüze kadar da, Allah Rasulü'nün gösterdiği gibi beş vakit olarak kılınmıştır. Diğer taraftan, namazla ilgili Kur’an ayetleri ve hadisler bir bütün olarak ele alındığında, namazın beş vakit olduğu açıkça anlaşılır (Bkz. Bakara 2/238; İsra 17/78; Rum 30/17-18; Buhari, Mevakit, 1, Tirmizi, Salat, 1).)` : footnotes.text}`}
+                                      <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
+                                        {`[${footnotes.number}] 
+                                 (
+                                 ${(
+                                            (ayet.surah_id === 2 && ayet.verse_number === 43 && footnotes.number === 1) ||
+                                            (ayet.surah_id === 2 && ayet.verse_number === 45 && footnotes.number === 2) ||
+                                            (ayet.surah_id === 2 && ayet.verse_number === 238 && footnotes.number === 1) ||
+                                            (ayet.surah_id === 2 && ayet.verse_number === 238 && footnotes.number === 2) ||
+                                            (ayet.surah_id === 4 && ayet.verse_number === 101 && footnotes.number === 3) ||
+                                            (ayet.surah_id === 4 && ayet.verse_number === 103 && footnotes.number === 2) ||
+                                            (ayet.surah_id === 5 && ayet.verse_number === 6 && footnotes.number === 2) ||
+                                            (ayet.surah_id === 5 && ayet.verse_number === 12 && footnotes.number === 1) ||
+                                            (ayet.surah_id === 11 && ayet.verse_number === 114 && footnotes.number === 1) ||
+                                            (ayet.surah_id === 11 && ayet.verse_number === 114 && footnotes.number === 2) ||
+                                            (ayet.surah_id === 19 && ayet.verse_number === 59 && footnotes.number === 1) ||
+                                            (ayet.surah_id === 20 && ayet.verse_number === 132 && footnotes.number === 1) ||
+                                            (ayet.surah_id === 21 && ayet.verse_number === 73 && footnotes.number === 1) ||
+                                            (ayet.surah_id === 22 && ayet.verse_number === 41 && footnotes.number === 1) ||
+                                            (ayet.surah_id === 27 && ayet.verse_number === 3 && footnotes.number === 1) ||
+                                            (ayet.surah_id === 31 && ayet.verse_number === 4 && footnotes.number === 1) ||
+                                            (ayet.surah_id === 62 && ayet.verse_number === 9 && footnotes.number === 3) ||
+                                            (ayet.surah_id === 108 && ayet.verse_number === 2 && footnotes.number === 1) ||
+                                            (ayet.surah_id === 108 && ayet.verse_number === 2 && footnotes.number === 2)
+                                          )
+                                            ? `${footnotes.text} [ HB - Dipnot ] Bu konuda daha doğru ve detay bilgilere [ https://kuran.diyanet.gov.tr | https://islamansiklopedisi.org.tr/arama ] gibi muteber adreslerden araştırma yaparak ulaşabilirsiniz.` : footnotes.text}`}
                                       </Typography>
                                     </p>
                                   ))

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLoaderData } from "react-router"
+import { useLoaderData, Link } from "react-router"
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -13,6 +13,7 @@ export default function Verses() {
   const [selectedSureName, setSelectedSureName] = useState(null);
   const [selectedSureVerseCount, setSelectedSureVerseCount] = useState(null);
   const [verses, setVerses] = useState(null);
+  const [checkFootnotes, setCheckFootnotes] = useState(false);
 
   useEffect(() => {
     if (selectedSureId > 0) {
@@ -43,6 +44,29 @@ export default function Verses() {
       backgroundColor: '#1A2027',
     }),
   }));
+
+  const CheckFootnotesFunction = (surah_id, verse_number, footnotes_number) => {
+    if (surah_id === 2 && verse_number === 43 && footnotes_number === 1) { setCheckFootnotes(true) }
+    else if (surah_id === 2 && verse_number === 45 && footnotes_number === 2) { setCheckFootnotes(true) }
+    else if (surah_id === 2 && verse_number === 238 && footnotes_number === 1) { setCheckFootnotes(true) }
+    else if (surah_id === 2 && verse_number === 238 && footnotes_number === 2) { setCheckFootnotes(true) }
+    else if (surah_id === 4 && verse_number === 101 && footnotes_number === 3) { setCheckFootnotes(true) }
+    else if (surah_id === 4 && verse_number === 103 && footnotes_number === 2) { setCheckFootnotes(true) }
+    else if (surah_id === 5 && verse_number === 6 && footnotes_number === 2) { setCheckFootnotes(true) }
+    else if (surah_id === 5 && verse_number === 12 && footnotes_number === 1) { setCheckFootnotes(true) }
+    else if (surah_id === 11 && verse_number === 114 && footnotes_number === 1) { setCheckFootnotes(true) }
+    else if (surah_id === 11 && verse_number === 114 && footnotes_number === 2) { setCheckFootnotes(true) }
+    else if (surah_id === 19 && verse_number === 59 && footnotes_number === 1) { setCheckFootnotes(true) }
+    else if (surah_id === 20 && verse_number === 132 && footnotes_number === 1) { setCheckFootnotes(true) }
+    else if (surah_id === 21 && verse_number === 73 && footnotes_number === 1) { setCheckFootnotes(true) }
+    else if (surah_id === 22 && verse_number === 41 && footnotes_number === 1) { setCheckFootnotes(true) }
+    else if (surah_id === 27 && verse_number === 3 && footnotes_number === 1) { setCheckFootnotes(true) }
+    else if (surah_id === 31 && verse_number === 4 && footnotes_number === 1) { setCheckFootnotes(true) }
+    else if (surah_id === 62 && verse_number === 9 && footnotes_number === 3) { setCheckFootnotes(true) }
+    else if (surah_id === 108 && verse_number === 2 && footnotes_number === 1) { setCheckFootnotes(true) }
+    else if (surah_id === 108 && verse_number === 2 && footnotes_number === 2) { setCheckFootnotes(true) }
+    else { setCheckFootnotes(false) }
+  }
 
   return (
     <>
@@ -127,8 +151,30 @@ export default function Verses() {
                         ayet.translation.footnotes.map(footnotes => (
                           <p key={footnotes.id}>
                             <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 15 }}>
-                              {/* {`[${footnotes.number}] ${footnotes.text}`} */}
-                              {`[${footnotes.number}] ${(ayet.surah_id === 2 && ayet.verse_number === 238 && footnotes.number === 2) ? `${footnotes.text} ("Namaz" Asr-ı saadetten günümüze kadar da, Allah Rasulü'nün gösterdiği gibi beş vakit olarak kılınmıştır. Diğer taraftan, namazla ilgili Kur’an ayetleri ve hadisler bir bütün olarak ele alındığında, namazın beş vakit olduğu açıkça anlaşılır (Bkz. Bakara 2/238; İsra 17/78; Rum 30/17-18; Buhari, Mevakit, 1, Tirmizi, Salat, 1). (Salât-ı vüstânın ikindi namazı olduğu şeklindeki yorum Hz. Ali, Ebû Hüreyre, Abdullah b. Ömer, Abdullah b. Abbas ve Hz. Âişe gibi sahâbîlerle bazı tâbiîn âlimleri ve müfessirlerden nakledilmiştir (a.g.e., II, 750-755). Bu anlayış, Hendek Gazvesi’nin kritik bir gününde ikindi namazını kılamayan Hz. Peygamber’in müşriklere bedduada bulunurken, “Bizi salât-ı vüstâdan alıkoydular” ifadesini kullanmış olmasına dayanmaktadır (Buhârî, “Cihâd”, 98, “Meġāzî”, 39; Müslim, “Mesâcid”, 202; ayrıca bk. a.g.e., II, 755-760).)"` : footnotes.text}`}
+                              {`[${footnotes.number}] 
+                                 (
+                                 ${(
+                                  (ayet.surah_id === 2 && ayet.verse_number === 43 && footnotes.number === 1) ||
+                                  (ayet.surah_id === 2 && ayet.verse_number === 45 && footnotes.number === 2) ||
+                                  (ayet.surah_id === 2 && ayet.verse_number === 238 && footnotes.number === 1) ||
+                                  (ayet.surah_id === 2 && ayet.verse_number === 238 && footnotes.number === 2) ||
+                                  (ayet.surah_id === 4 && ayet.verse_number === 101 && footnotes.number === 3) ||
+                                  (ayet.surah_id === 4 && ayet.verse_number === 103 && footnotes.number === 2) ||
+                                  (ayet.surah_id === 5 && ayet.verse_number === 6 && footnotes.number === 2) ||
+                                  (ayet.surah_id === 5 && ayet.verse_number === 12 && footnotes.number === 1) ||
+                                  (ayet.surah_id === 11 && ayet.verse_number === 114 && footnotes.number === 1) ||
+                                  (ayet.surah_id === 11 && ayet.verse_number === 114 && footnotes.number === 2) ||
+                                  (ayet.surah_id === 19 && ayet.verse_number === 59 && footnotes.number === 1) ||
+                                  (ayet.surah_id === 20 && ayet.verse_number === 132 && footnotes.number === 1) ||
+                                  (ayet.surah_id === 21 && ayet.verse_number === 73 && footnotes.number === 1) ||
+                                  (ayet.surah_id === 22 && ayet.verse_number === 41 && footnotes.number === 1) ||
+                                  (ayet.surah_id === 27 && ayet.verse_number === 3 && footnotes.number === 1) ||
+                                  (ayet.surah_id === 31 && ayet.verse_number === 4 && footnotes.number === 1) ||
+                                  (ayet.surah_id === 62 && ayet.verse_number === 9 && footnotes.number === 3) ||
+                                  (ayet.surah_id === 108 && ayet.verse_number === 2 && footnotes.number === 1) ||
+                                  (ayet.surah_id === 108 && ayet.verse_number === 2 && footnotes.number === 2)
+                                )
+                                  ? `${footnotes.text} [ HB - Dipnot ] Bu konuda daha doğru ve detay bilgilere [ https://kuran.diyanet.gov.tr | https://islamansiklopedisi.org.tr/arama ] gibi muteber adreslerden araştırma yaparak ulaşabilirsiniz.` : footnotes.text}`}
                             </Typography>
                           </p>
                         ))
